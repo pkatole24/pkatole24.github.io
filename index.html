@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paarth Katole · Analytics Portfolio</title>
+  <meta name="description" content="Paarth Katole — UCLA Anderson MSBA ’26. Supply chain & operations analytics, product analytics, and decision science. Projects, experience, skills, and contact." />
+  <meta property="og:title" content="Paarth Katole · Analytics Portfolio" />
+  <meta property="og:description" content="Supply chain & ops analytics · SQL · Python · Power BI · UCLA Anderson MSBA ’26 · ex-IIT Bombay." />
+  <meta property="og:type" content="website" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📊</text></svg>">
+  <style>
+    :root{
+      --bg:#0b1220; --card:#111827; --text:#e5e7eb; --link:#60a5fa; --chip:#1f2937;
+      --light-bg:#ffffff; --light-card:#f9fafb; --light-text:#0b1220; --light-link:#2563eb; --ring:0 10px 30px rgba(96,165,250,.25);
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
+    .container{max-width:980px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:rgba(11,18,32,.6);backdrop-filter:blur(8px);border-bottom:1px solid #1f2937;z-index:50}
+    .light header{background:rgba(255,255,255,.75);border-color:#e5e7eb}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    nav a{color:var(--link);text-decoration:none;font-weight:600}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(45deg,#7c3aed,#22d3ee);box-shadow:0 0 16px #7c3aed}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid #374151;background:#0b1220;color:#e5e7eb;text-decoration:none}
+    .btn:hover{transform:translateY(-1px)}
+    .light .btn{background:#fff;color:#0b1220;border-color:#e5e7eb}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:48px 0}
+    .card{background:var(--card);border:1px solid #1f2937;border-radius:16px;padding:20px;box-shadow:var(--ring)}
+    .light .card{background:var(--light-card);border-color:#e5e7eb;box-shadow:0 10px 30px rgba(2,6,23,.06)}
+    h1{font-size:40px;line-height:1.15;margin:0 0 10px}
+    h2{font-size:28px;margin:8px 0 16px}
+    h3{margin:8px 0}
+    p{margin:6px 0 12px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:6px 10px;border-radius:999px;background:var(--chip);border:1px solid #374151;color:#9ca3af;font-size:13px}
+    .light .chip{background:#f3f4f6;border-color:#e5e7eb;color:#4b5563}
+    .grid{display:grid;gap:16px}
+    .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .exp-item,.proj-item{display:flex;flex-direction:column;gap:6px}
+    .exp-item time{font-size:12px;color:#93c5fd}
+    .light .exp-item time{color:#2563eb}
+    .proj-tags{display:flex;gap:6px;flex-wrap:wrap}
+    .proj-item a{color:var(--link);text-decoration:none}
+    footer{padding:40px 0;color:#9ca3af;font-size:14px;text-align:center}
+    .section{padding:36px 0}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid.two{grid-template-columns:1fr}.grid.three{grid-template-columns:1fr 1fr}}
+    @media (max-width:600px){h1{font-size:32px}.grid.three{grid-template-columns:1fr}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Paarth Katole",
+    "url":"https://<your-username>.github.io/",
+    "jobTitle":"MSBA Candidate · Supply Chain & Operations Analytics",
+    "alumniOf": [
+      {"@type":"CollegeOrUniversity","name":"IIT Bombay"},
+      {"@type":"CollegeOrUniversity","name":"UCLA Anderson"}
+    ],
+    "sameAs": ["https://www.linkedin.com/in/<your-linkedin>", "https://github.com/<your-github>"]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand"><span class="dot" aria-hidden="true"></span> <a href="#top" style="color:inherit;text-decoration:none">Paarth Katole</a></div>
+        <div style="display:flex;gap:16px;align-items:center">
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+          <button id="theme" class="btn" aria-label="Toggle theme">🌓</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div>
+        <h1>Supply Chain & Ops Analytics that Ship Results</h1>
+        <p>UCLA Anderson MSBA ’26 · ex-IIT Bombay. I use SQL/Python, product sense, and clear storytelling to improve throughput, reduce downtime, and make data-driven decisions at scale.</p>
+        <div class="chips">
+          <span class="chip">SQL</span><span class="chip">Python</span><span class="chip">R</span>
+          <span class="chip">Power BI</span><span class="chip">Tableau</span>
+          <span class="chip">Predictive Maintenance</span><span class="chip">A/B Testing</span><span class="chip">Experiment Design</span>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="/resume.pdf" target="_blank" rel="noopener">📄 View Resume</a>
+          <a class="btn" href="https://www.linkedin.com/in/<your-linkedin>" target="_blank" rel="noopener">🔗 LinkedIn</a>
+          <a class="btn" href="https://github.com/<your-github>" target="_blank" rel="noopener">💻 GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Quick Facts</h3>
+        <ul>
+          <li>Target roles: Supply Chain / Operations / Data Analyst; Decision Science.</li>
+          <li>Interests: Tesla logistics, Mattel global ops, Disney decision science.</li>
+          <li>Currently leveling up: advanced Power BI & dbt-style SQL modeling.</li>
+        </ul>
+        <p style="font-size:13px"><strong>Tip:</strong> Press <em>G</em> then <em>P</em> on GitHub to open the command palette.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Projects</h2>
+      <div class="grid two">
+        <article class="proj-item card">
+          <h3>Predictive Maintenance for Heavy Machinery</h3>
+          <p>Integrated live machine sensor data into SQL and built a Power BI monitoring suite with automated KPIs and risk alerts. Co-developed an ML model to flag potential failures, contributing to ~40% reduction in unplanned downtime.*</p>
+          <div class="proj-tags">
+            <span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">Python</span>
+          </div>
+          <p><a href="<case-study-link>">Case study</a> · <a href="<repo-link>">Repo</a></p>
+        </article>
+
+        <article class="proj-item card">
+          <h3>IPL Analytics — Win Probabilities & Player Impact</h3>
+          <p>Used a 12-year IPL dataset to model match win probabilities and player impact. Built interactive visuals and tactical write-ups to explain decisions and scenarios.</p>
+          <div class="proj-tags"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">Plotly</span></div>
+          <p><a href="<notebook-link>">Notebook</a> · <a href="<demo-link>">Demo</a></p>
+        </article>
+
+        <article class="proj-item card">
+          <h3>WEEE Dismantling ROI & Time Modeling</h3>
+          <p>Cleaned 1,000+ records and built regressions on dismantling time vs. device complexity. Identified throughput levers and ROI scenarios for process improvements.</p>
+          <div class="proj-tags"><span class="chip">R</span><span class="chip">GLM</span><span class="chip">Reporting</span></div>
+          <p><a href="<report-link>">Report</a></p>
+        </article>
+
+        <article class="proj-item card">
+          <h3>Live Rank Prediction for EdTech (500k+ users)</h3>
+          <p>Led an ML-based live rank predictor for a large student base. Focused on reliability and UX to increase engagement and trust.</p>
+          <div class="proj-tags"><span class="chip">Machine Learning</span><span class="chip">APIs</span></div>
+          <p><a href="<overview-link>">Overview</a></p>
+        </article>
+      </div>
+      <p style="font-size:12px;color:#9ca3af;margin-top:8px">*Adjust figures to audience and NDA constraints.</p>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+      <div class="grid two">
+        <div class="exp-item card">
+          <div style="display:flex;justify-content:space-between;align-items:center"><h3>EY-Parthenon — Business Consulting Intern</h3><time>Feb–Mar 2025</time></div>
+          <p>Healthcare market entry for South India: competitor benchmarking, district-level revenue sizing (USD 300–600M), and go-to-market recommendations.</p>
+        </div>
+
+        <div class="exp-item card">
+          <div style="display:flex;justify-content:space-between;align-items:center"><h3>Putzmeister — Operations Analyst Intern</h3><time>May–Jul 2023</time></div>
+          <p>Built SQL-backed machine-health dashboards and predictive maintenance workflows in Power BI; enabled real-time alerts and KPI tracking.</p>
+        </div>
+
+        <div class="exp-item card">
+          <div style="display:flex;justify-content:space-between;align-items:center"><h3>Sohar University — Data Analyst (WEEE)</h3><time>Apr–Jul 2024</time></div>
+          <p>Modeled dismantling time vs. device complexity; recommended ROI levers to improve throughput for e-waste operations.</p>
+        </div>
+
+        <div class="exp-item card">
+          <div style="display:flex;justify-content:space-between;align-items:center"><h3>IMH (IIT-Bombay) — Associate Consultant</h3><time>2021–2022</time></div>
+          <p>Delivered analytics for large student cohorts; ran SPSS surveys and built ML tools to inform decision-making.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <div class="grid three">
+        <div class="card">
+          <h3>Languages & DB</h3>
+          <p>SQL (Postgres, MySQL), Python (pandas, scikit-learn), R</p>
+        </div>
+        <div class="card">
+          <h3>Analytics & Viz</h3>
+          <p>Power BI, Tableau, A/B Testing, Experiment Design</p>
+        </div>
+        <div class="card">
+          <h3>Ops & Tooling</h3>
+          <p>Git/GitHub, Jupyter, Excel, REST APIs</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="grid two">
+        <form class="card" id="contact-form" action="https://formspree.io/f/<your-form-id>" method="POST">
+          <label class="sr-only" for="name">Name</label>
+          <input id="name" name="name" placeholder="Your Name" required style="width:100%;padding:12px;border-radius:10px;border:1px solid #374151;background:transparent;color:inherit;margin-bottom:10px" />
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="Email" required style="width:100%;padding:12px;border-radius:10px;border:1px solid #374151;background:transparent;color:inherit;margin-bottom:10px" />
+          <textarea name="message" rows="5" placeholder="Message" required style="width:100%;padding:12px;border-radius:10px;border:1px solid #374151;background:transparent;color:inherit"></textarea>
+          <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
+            <button class="btn" type="submit">Send</button>
+            <a class="btn" href="mailto:<your-email>">Email me</a>
+          </div>
+        </form>
+        <div class="card">
+          <h3>Elsewhere</h3>
+          <p>Los Angeles, CA · Open to relocation</p>
+          <ul>
+            <li>📱 <a href="tel:+12138595507">(213) 859-5507</a></li>
+            <li>✉️ <a href="mailto:<your-email>"><your-email></a></li>
+            <li>🔗 <a href="https://www.linkedin.com/in/<your-linkedin>" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li>💻 <a href="https://github.com/<your-github>" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+          <p style="font-size:12px;color:#9ca3af">Static, fast, and tracker-free.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Paarth Katole · Built with GitHub Pages
+    </footer>
+  </main>
+
+  <script>
+    // theme toggle
+    const btn = document.getElementById('theme');
+    const isLight = localStorage.getItem('theme') === 'light';
+    if(isLight) document.documentElement.classList.add('light');
+    btn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('light');
+      localStorage.setItem('theme', document.documentElement.classList.contains('light') ? 'light' : 'dark');
+    });
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
