@@ -165,8 +165,20 @@ section .title::after{
 
 /* Links inside cards should also be blue */
 .card a { color: var(--primary) !important; }
-
-
+/* Two-card layout tuning */
+.kv{
+  justify-content: center;             /* center the row */
+  flex-wrap: wrap;                      /* wrap on small screens */
+  gap: 16px;                            /* consistent spacing (if not already) */
+}
+.kv div{
+  flex: 0 1 260px;                      /* tidy card width */
+  text-align: center;                   
+}
+.kv strong{
+  font-size: 28px;                      /* make numbers pop */
+  color: var(--primary);
+}
   </style>
 </head>
 <body>
@@ -192,8 +204,7 @@ section .title::after{
     <!-- ===== Hero ===== -->
     <section class="hero" id="home">
       <div class="blurb">
-        <h1>Hello There!</h1>
-        <h2>This is Paarth</h2>
+        <h1>Hello There! This is Paarth</h1>
         <h3>UCLA MS Business Analytics ’26 · Data Science / Product Analytics / Operations & Supply Chain Analytics</h3>
         <p>A results-oriented analyst skilled in stakeholder engagement, data storytelling, and insight generation, translating complex data into business value and measurable impact across functions.</p>
         <p>Proficient in predictive analytics, forecasting, and data visualization, leveraging statistical models to uncover patterns and guide business strategy.</p>
@@ -211,8 +222,7 @@ section .title::after{
          </ul>
         <div class="kv" style="margin-top:14px">
           <div><strong>3+</strong><br/>Analytics projects</div>
-          <div><strong>4</strong><br/>Organizations worked</div>
-          <div><strong>2</strong><br/>Continents experience</div>
+          <div><strong>4</strong><br/>Cross-Industry Organization exposure</div>
         </div>
       </div>
     </section>
