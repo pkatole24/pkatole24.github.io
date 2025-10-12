@@ -134,6 +134,28 @@ body{
 /* footer on dark bg */
 footer{ background: transparent; color: #d7e6f8; }
 footer a{ color:#fff; }
+    /* High-contrast section headings on UCLA blue background */
+section .title{
+  color: #ffffff !important;
+  text-shadow: 0 1px 0 rgba(0,0,0,.25);
+}
+section .subtitle{
+  color: rgba(255,255,255,.88) !important;
+}
+
+/* Gold accent underline for H2 titles */
+section .title::after{
+  content:"";
+  display:block;
+  width:56px; height:3px;
+  background: var(--gold);
+  border-radius:2px;
+  margin-top:6px;
+}
+
+/* Keep card headings legible on white cards */
+.card h3{ color: var(--primary); }
+
 
   </style>
 </head>
@@ -149,7 +171,7 @@ footer a{ color:#fff; }
           <li><a href="#experience">Experience</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="btn alt" href="/PaartKatole_Resume.pdf">Resume</a></li>
+          <li><a class="btn alt" href="/PaarthKatole_Resume.pdf">Resume</a></li>
         </ul>
       </nav>
     </div>
@@ -294,7 +316,7 @@ footer a{ color:#fff; }
   </main>
 
   <footer>
-    © <span id="y"></span> Paarth Katole · UCLA colors · No trackers
+    © <span id="y"></span> Paarth Katole
   </footer>
 
   <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
