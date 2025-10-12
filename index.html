@@ -92,6 +92,49 @@
       .hero h1{font-size:34px}
       .title{font-size:28px}
     }
+    /* ===== UCLA creative background ===== */
+body{
+  /* layered: gold glows + blue gradient */
+  background:
+    radial-gradient(900px 420px at 110% -10%, rgba(255,199,44,0.18), transparent 45%),
+    radial-gradient(800px 380px at -10% 10%, rgba(139,184,232,0.16), transparent 50%),
+    linear-gradient(135deg, #1F5D8B 0%, #2774AE 45%, #0D2B57 100%);
+  color: var(--text);
+}
+
+/* header on dark background */
+.header{
+  background: transparent;
+  border-bottom: 0;
+}
+.nav a{ color: #ffffff; }
+.brand{ color: #FFC72C; text-shadow: 0 1px 0 rgba(0,0,0,.25); }
+
+/* hero: make left column readable on dark bg */
+.hero{ align-items: stretch; }
+.hero .blurb{
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(231,237,246,0.8);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 14px 40px rgba(39,116,174,.20);
+}
+
+/* keep cards “floating” */
+.card{
+  background: rgba(255,255,255,0.94);
+  border: 1px solid rgba(231,237,246,.9);
+  box-shadow: 0 16px 36px rgba(15,27,46,.18);
+}
+
+/* buttons pop on blue */
+.btn{ box-shadow: 0 10px 24px rgba(39,116,174,.28); }
+.btn.alt{ background: var(--gold); color:#0b1220; box-shadow: 0 10px 24px rgba(255,199,44,.28); }
+
+/* footer on dark bg */
+footer{ background: transparent; color: #d7e6f8; }
+footer a{ color:#fff; }
+
   </style>
 </head>
 <body>
@@ -116,7 +159,7 @@
 
     <!-- ===== Hero ===== -->
     <section class="hero" id="home">
-      <div>
+      <div class="blurb">
         <h1>Hi, I’m Paarth Katole</h1>
         <h3>UCLA MS Business Analytics ’26 · Data / Product / Supply Chain Analytics</h3>
         <p>I blend SQL/Python with product sense to improve throughput, reduce downtime, and make clear, data-driven decisions. UCLA Anderson · IIT Bombay ’24.</p>
