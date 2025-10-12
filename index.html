@@ -1,237 +1,528 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Paarth Katole · Analytics Portfolio</title>
-  <meta name="description" content="Paarth Katole — UCLA Anderson MSBA ’26. Supply chain & operations analytics, product analytics, and decision science. Projects, experience, skills, and contact." />
-  <meta property="og:title" content="Paarth Katole · Analytics Portfolio" />
-  <meta property="og:description" content="Supply chain & ops analytics · SQL · Python · Power BI · UCLA Anderson MSBA ’26 · ex-IIT Bombay." />
-  <meta property="og:type" content="website" />
-  <meta name="color-scheme" content="light dark" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📊</text></svg>">
-  <style>
-    :root{
-      --bg:#0b1220; --card:#111827; --text:#e5e7eb; --link:#60a5fa; --chip:#1f2937;
-      --light-bg:#ffffff; --light-card:#f9fafb; --light-text:#0b1220; --light-link:#2563eb; --ring:0 10px 30px rgba(96,165,250,.25);
-    }
-    html{scroll-behavior:smooth}
-    body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;background:var(--bg);color:var(--text)}
-    .container{max-width:980px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;background:rgba(11,18,32,.6);backdrop-filter:blur(8px);border-bottom:1px solid #1f2937;z-index:50}
-    .light header{background:rgba(255,255,255,.75);border-color:#e5e7eb}
-    nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    nav a{color:var(--link);text-decoration:none;font-weight:600}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
-    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(45deg,#7c3aed,#22d3ee);box-shadow:0 0 16px #7c3aed}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;border:1px solid #374151;background:#0b1220;color:#e5e7eb;text-decoration:none}
-    .btn:hover{transform:translateY(-1px)}
-    .light .btn{background:#fff;color:#0b1220;border-color:#e5e7eb}
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:48px 0}
-    .card{background:var(--card);border:1px solid #1f2937;border-radius:16px;padding:20px;box-shadow:var(--ring)}
-    .light .card{background:var(--light-card);border-color:#e5e7eb;box-shadow:0 10px 30px rgba(2,6,23,.06)}
-    h1{font-size:40px;line-height:1.15;margin:0 0 10px}
-    h2{font-size:28px;margin:8px 0 16px}
-    h3{margin:8px 0}
-    p{margin:6px 0 12px}
-    .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{padding:6px 10px;border-radius:999px;background:var(--chip);border:1px solid #374151;color:#9ca3af;font-size:13px}
-    .light .chip{background:#f3f4f6;border-color:#e5e7eb;color:#4b5563}
-    .grid{display:grid;gap:16px}
-    .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .exp-item,.proj-item{display:flex;flex-direction:column;gap:6px}
-    .exp-item time{font-size:12px;color:#93c5fd}
-    .light .exp-item time{color:#2563eb}
-    .proj-tags{display:flex;gap:6px;flex-wrap:wrap}
-    .proj-item a{color:var(--link);text-decoration:none}
-    footer{padding:40px 0;color:#9ca3af;font-size:14px;text-align:center}
-    .section{padding:36px 0}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.grid.two{grid-template-columns:1fr}.grid.three{grid-template-columns:1fr 1fr}}
-    @media (max-width:600px){h1{font-size:32px}.grid.three{grid-template-columns:1fr}}
-  </style>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Paarth Katole",
-    "url":"https://<your-username>.github.io/",
-    "jobTitle":"MSBA Candidate · Supply Chain & Operations Analytics",
-    "alumniOf": [
-      {"@type":"CollegeOrUniversity","name":"IIT Bombay"},
-      {"@type":"CollegeOrUniversity","name":"UCLA Anderson"}
-    ],
-    "sameAs": ["https://www.linkedin.com/in/<your-linkedin>", "https://github.com/<your-github>"]
-  }
-  </script>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand"><span class="dot" aria-hidden="true"></span> <a href="#top" style="color:inherit;text-decoration:none">Paarth Katole</a></div>
-        <div style="display:flex;gap:16px;align-items:center">
-          <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-          <button id="theme" class="btn" aria-label="Toggle theme">🌓</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon (kept from your file) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/168545516-sm-initial-letter-vector-logo.jpg">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="favicon_io/168545516-sm-initial-letter-vector-logo.jpg">
+    <link rel="icon" type="image/x-icon" sizes="16x16" href="favicon_io/168545516-sm-initial-letter-vector-logo.jpg">
+    <link rel="icon" href="assets/img/168545516-sm-initial-letter-vector-logo.jpg" type="image/x-icon">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Icon sets / libs you were using -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+
+    <!--==================== SWIPER CSS ====================-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+
+    <!--==================== BASE THEME CSS (your original) ====================-->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <!--==================== FONTS: Garamond ====================-->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <title>Paarth Katole · Portfolio</title>
+
+    <!--==================== OVERRIDES: COLORS + TYPO ====================-->
+    <style>
+      :root{
+        /* Elegant light palette */
+        --pk-bg: #f9f7f3;           /* warm paper */
+        --pk-surface: #ffffff;      /* cards */
+        --pk-text: #1a1a1a;         /* main text */
+        --pk-subtext: #5b5b5b;      /* muted */
+        --pk-primary: #0f3d5e;      /* deep navy-teal */
+        --pk-accent: #c18f2a;       /* understated gold */
+        --pk-line: #e7e4dd;         /* dividers */
+        --pk-btn-text: #ffffff;
+
+        /* Dark mode (if your JS toggles) */
+        --pk-bg-dark: #0f1418;
+        --pk-surface-dark: #151b20;
+        --pk-text-dark: #eaeaea;
+        --pk-subtext-dark: #a7a7a7;
+        --pk-primary-dark: #6db3ff;
+        --pk-accent-dark: #f1c062;
+        --pk-line-dark: #25303a;
+      }
+
+      /* Global typography */
+      html, body{
+        font-family: "EB Garamond", Garamond, Georgia, serif !important;
+        letter-spacing: 0.1px;
+        background: var(--pk-bg);
+        color: var(--pk-text);
+      }
+
+      /* Section titles / subtitles */
+      .section_title{
+        color: var(--pk-primary) !important;
+        font-weight: 700 !important;
+        letter-spacing: .5px;
+      }
+      .section_subtitle{
+        color: var(--pk-subtext) !important;
+      }
+
+      /* Header / nav */
+      .header{
+        background: rgba(249,247,243,0.8) !important;
+        backdrop-filter: blur(6px);
+        border-bottom: 1px solid var(--pk-line);
+      }
+      .nav_logo{
+        color: var(--pk-primary) !important;
+        font-weight: 700 !important;
+      }
+      .nav_link{
+        color: var(--pk-primary) !important;
+      }
+      .nav_link:hover{ text-decoration: underline; }
+
+      /* Buttons */
+      .button, .button--flex, .portfolio_button{
+        background: var(--pk-primary) !important;
+        color: var(--pk-btn-text) !important;
+        border: 1px solid transparent !important;
+        border-radius: 10px !important;
+        transition: transform .08s ease, box-shadow .12s ease, background .2s ease;
+      }
+      .button:hover, .button--flex:hover, .portfolio_button:hover{
+        transform: translateY(-1px);
+        box-shadow: 0 6px 18px rgba(15,61,94,0.18);
+      }
+
+      /* Cards / containers */
+      .card, .about_container .container, .skills_content, .qualification_content,
+      .portfolio_content, .contact_form, .footer_bg{
+        background: var(--pk-surface) !important;
+      }
+      .portfolio_content, .skills_content, .qualification_content{
+        border: 1px solid var(--pk-line);
+        border-radius: 14px;
+        padding: 1.25rem;
+      }
+
+      /* Primary accents */
+      a{ color: var(--pk-primary); }
+      a:hover{ color: #0b2e48; }
+
+      /* Home hero */
+      .home_title, .home_subtitle{
+        color: var(--pk-primary) !important;
+      }
+      .home_description{
+        color: var(--pk-text) !important;
+      }
+
+      /* Skills bars tweak to a classic serif look */
+      .skills_bar, .skills_percentage{
+        background: var(--pk-line) !important;
+      }
+
+      /* Contact */
+      .contact_title{ color: var(--pk-primary) !important; }
+      .contact_subtitle{ color: var(--pk-subtext) !important; }
+
+      /* Footer */
+      .footer_bg{
+        background: var(--pk-bg) !important;
+        border-top: 1px solid var(--pk-line);
+      }
+      .footer_title{ color: var(--pk-primary) !important; }
+      .footer_subtitle, .footer_copy{ color: var(--pk-subtext) !important; }
+
+      /* Dark theme support: if your JS toggles a class (commonly 'dark-theme') */
+      .dark-theme, [data-theme="dark"]{
+        --pk-bg: var(--pk-bg-dark);
+        --pk-surface: var(--pk-surface-dark);
+        --pk-text: var(--pk-text-dark);
+        --pk-subtext: var(--pk-subtext-dark);
+        --pk-primary: var(--pk-primary-dark);
+        --pk-accent: var(--pk-accent-dark);
+        --pk-line: var(--pk-line-dark);
+        --pk-btn-text: #0b1116;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+      <nav class="nav container">
+        <!-- rename to your name -->
+        <a href="#" class="nav_logo">Paarth Katole</a>
+
+        <div class="nav_menu" id="nav-menu">
+          <ul class="nav_list grid">
+            <li class="nav_item"><a href="#home" class="nav_link"><i class="uil uil-estate nav_icon"></i> Home</a></li>
+            <li class="nav_item"><a href="#about" class="nav_link"><i class="uil uil-user nav_icon"></i> About</a></li>
+            <li class="nav_item"><a href="#skills" class="nav_link"><i class="uil uil-file-alt nav_icon"></i> Skills</a></li>
+            <li class="nav_item"><a href="#portfolio" class="nav_link"><i class="uil uil-scenery nav_icon"></i> Portfolio</a></li>
+            <li class="nav_item"><a href="#contact" class="nav_link"><i class="uil uil-message nav_icon"></i> Contact</a></li>
+          </ul>
+          <i class="uil uil-times nav_close" id="nav-close"></i>
+        </div>
+
+        <div class="nav_btns">
+          <!-- Theme toggle kept (your JS handles it) -->
+          <i class="uil uil-moon change-theme" id="theme-button"></i>
+          <div class="nav_toggle" id="nav-toggle"><i class="uil uil-apps"></i></div>
         </div>
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main id="top" class="container">
-    <section class="hero">
-      <div>
-        <h1>Supply Chain & Ops Analytics that Ship Results</h1>
-        <p>UCLA Anderson MSBA ’26 · ex-IIT Bombay. I use SQL/Python, product sense, and clear storytelling to improve throughput, reduce downtime, and make data-driven decisions at scale.</p>
-        <div class="chips">
-          <span class="chip">SQL</span><span class="chip">Python</span><span class="chip">R</span>
-          <span class="chip">Power BI</span><span class="chip">Tableau</span>
-          <span class="chip">Predictive Maintenance</span><span class="chip">A/B Testing</span><span class="chip">Experiment Design</span>
-        </div>
-        <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn" href="/PaarthKatole_Resume.pdf" target="_blank" rel="noopener">📄 View Resume</a>
-          <a class="btn" href="https://www.linkedin.com/in/<your-linkedin>" target="_blank" rel="noopener">🔗 LinkedIn</a>
-          <a class="btn" href="https://github.com/<your-github>" target="_blank" rel="noopener">💻 GitHub</a>
-        </div>
-      </div>
-      <div class="card">
-        <h3>Quick Facts</h3>
-        <ul>
-          <li>Target roles: Supply Chain / Operations / Data Analyst; Decision Science.</li>
-          <li>Interests: Tesla logistics, Mattel global ops, Disney decision science.</li>
-          <li>Currently leveling up: advanced Power BI & dbt-style SQL modeling.</li>
-        </ul>
-        <p style="font-size:13px"><strong>Tip:</strong> Press <em>G</em> then <em>P</em> on GitHub to open the command palette.</p>
-      </div>
-    </section>
+    <!--==================== MAIN ====================-->
+    <main class="main">
+      <!--==================== HOME ====================-->
+      <section class="home section" id="home">
+        <div class="home_container container grid">
+          <div class="home_content grid">
+            <div class="home_social">
+              <a href="https://www.linkedin.com/in/paarthkatole/" target="_blank" class="home_social-icon"><i class="uil uil-linkedin-alt"></i></a>
+              <a href="https://github.com/pkatole24" target="_blank" class="home_social-icon"><i class="uil uil-github-alt"></i></a>
+              <a href="https://leetcode.com/pkatole24/" target="_blank" class="home_social-icon"><i class="uil uil-arrow"></i></a>
+            </div>
 
-    <section id="projects" class="section">
-      <h2>Projects</h2>
-      <div class="grid two">
-        <article class="proj-item card">
-          <h3>Predictive Maintenance for Heavy Machinery</h3>
-          <p>Integrated live machine sensor data into SQL and built a Power BI monitoring suite with automated KPIs and risk alerts. Co-developed an ML model to flag potential failures, contributing to ~40% reduction in unplanned downtime.*</p>
-          <div class="proj-tags">
-            <span class="chip">Power BI</span><span class="chip">SQL</span><span class="chip">Python</span>
+            <img src="assets/img/5207 b final.jpg" alt="" class="home_img" />
+
+            <div class="home_data">
+              <h2 class="home_title">Hi, I’m Paarth Katole</h2>
+              <h3 class="home_subtitle">UCLA MS Business Analytics ’26 · Data Science / Product Analytics and Management / Supply Chain Analytics</h3>
+              <p class="home_description">
+                I blend SQL/Python with product sense to improve throughput, reduce downtime, and make clear, data-driven decisions. UCLA Anderson · IIT Bombay '24.
+              </p>
+              <a href="#contact" class="button button--flex">Contact Me <i class="uil uil-message button_icon"></i></a>
+            </div>
           </div>
-          <p><a href="<case-study-link>">Case study</a> · <a href="<repo-link>">Repo</a></p>
-        </article>
 
-        <article class="proj-item card">
-          <h3>IPL Analytics — Win Probabilities & Player Impact</h3>
-          <p>Used a 12-year IPL dataset to model match win probabilities and player impact. Built interactive visuals and tactical write-ups to explain decisions and scenarios.</p>
-          <div class="proj-tags"><span class="chip">Python</span><span class="chip">pandas</span><span class="chip">Plotly</span></div>
-          <p><a href="<notebook-link>">Notebook</a> · <a href="<demo-link>">Demo</a></p>
-        </article>
-
-        <article class="proj-item card">
-          <h3>WEEE Dismantling ROI & Time Modeling</h3>
-          <p>Cleaned 1,000+ records and built regressions on dismantling time vs. device complexity. Identified throughput levers and ROI scenarios for process improvements.</p>
-          <div class="proj-tags"><span class="chip">R</span><span class="chip">GLM</span><span class="chip">Reporting</span></div>
-          <p><a href="<report-link>">Report</a></p>
-        </article>
-
-        <article class="proj-item card">
-          <h3>Live Rank Prediction for EdTech (500k+ users)</h3>
-          <p>Led an ML-based live rank predictor for a large student base. Focused on reliability and UX to increase engagement and trust.</p>
-          <div class="proj-tags"><span class="chip">Machine Learning</span><span class="chip">APIs</span></div>
-          <p><a href="<overview-link>">Overview</a></p>
-        </article>
-      </div>
-      <p style="font-size:12px;color:#9ca3af;margin-top:8px">*Adjust figures to audience and NDA constraints.</p>
-    </section>
-
-    <section id="experience" class="section">
-      <h2>Experience</h2>
-      <div class="grid two">
-        <div class="exp-item card">
-          <div style="display:flex;justify-content:space-between;align-items:center"><h3>EY-Parthenon — Business Consulting Intern</h3><time>Feb–Mar 2025</time></div>
-          <p>Healthcare market entry for South India: competitor benchmarking, district-level revenue sizing (USD 300–600M), and go-to-market recommendations.</p>
-        </div>
-
-        <div class="exp-item card">
-          <div style="display:flex;justify-content:space-between;align-items:center"><h3>Putzmeister — Operations Analyst Intern</h3><time>May–Jul 2023</time></div>
-          <p>Built SQL-backed machine-health dashboards and predictive maintenance workflows in Power BI; enabled real-time alerts and KPI tracking.</p>
-        </div>
-
-        <div class="exp-item card">
-          <div style="display:flex;justify-content:space-between;align-items:center"><h3>Sohar University — Data Analyst (WEEE)</h3><time>Apr–Jul 2024</time></div>
-          <p>Modeled dismantling time vs. device complexity; recommended ROI levers to improve throughput for e-waste operations.</p>
-        </div>
-
-        <div class="exp-item card">
-          <div style="display:flex;justify-content:space-between;align-items:center"><h3>IMH (IIT-Bombay) — Associate Consultant</h3><time>2021–2022</time></div>
-          <p>Delivered analytics for large student cohorts; ran SPSS surveys and built ML tools to inform decision-making.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section">
-      <h2>Skills</h2>
-      <div class="grid three">
-        <div class="card">
-          <h3>Languages & DB</h3>
-          <p>SQL (Postgres, MySQL), Python (pandas, scikit-learn), R</p>
-        </div>
-        <div class="card">
-          <h3>Analytics & Viz</h3>
-          <p>Power BI, Tableau, A/B Testing, Experiment Design</p>
-        </div>
-        <div class="card">
-          <h3>Ops & Tooling</h3>
-          <p>Git/GitHub, Jupyter, Excel, REST APIs</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <div class="grid two">
-        <form class="card" id="contact-form" action="https://formspree.io/f/<your-form-id>" method="POST">
-          <label class="sr-only" for="name">Name</label>
-          <input id="name" name="name" placeholder="Your Name" required style="width:100%;padding:12px;border-radius:10px;border:1px solid #374151;background:transparent;color:inherit;margin-bottom:10px" />
-          <label class="sr-only" for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="Email" required style="width:100%;padding:12px;border-radius:10px;border:1px solid #374151;background:transparent;color:inherit;margin-bottom:10px" />
-          <textarea name="message" rows="5" placeholder="Message" required style="width:100%;padding:12px;border-radius:10px;border:1px solid #374151;background:transparent;color:inherit"></textarea>
-          <div style="display:flex;gap:10px;align-items:center;margin-top:10px">
-            <button class="btn" type="submit">Send</button>
-            <a class="btn" href="mailto:<your-email>">Email me</a>
+          <div class="home_scroll">
+            <a href="#about" class="home_scroll-button button--flex">
+              <i class="uil uil-mouse-alt home_scroll-mouse"></i>
+              <span class="home_scroll-name">Scroll Down</span>
+              <i class="uil uil-arrow-down home_scroll-arrow"></i>
+            </a>
           </div>
-        </form>
-        <div class="card">
-          <h3>Elsewhere</h3>
-          <p>Los Angeles, CA · Open to relocation</p>
-          <ul>
-            <li>📱 <a href="tel:+12138595507">(213) 859-5507</a></li>
-            <li>✉️ <a href="mailto:<your-email>"><your-email></a></li>
-            <li>🔗 <a href="https://www.linkedin.com/in/<your-linkedin>" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li>💻 <a href="https://github.com/<your-github>" target="_blank" rel="noopener">GitHub</a></li>
+        </div>
+      </section>
+
+      <!--==================== ABOUT ====================-->
+      <section class="about section" id="about">
+        <h2 class="section_title">About Me</h2>
+        <span class="section_subtitle">Introduction</span>
+
+        <div class="about_container container grid">
+          <div class="about_data">
+            <p class="about_description">
+              UCLA MS in Business Analytics student and IIT Bombay graduate with experience in analytics, consulting, and strategy. I am a results-oriented analyst passionate about leveraging data analytics and AI to translate complex data into business value and measurable impact across functions.
+
+              Key Skills:
+              • Predictive Modeling, Forecasting, Machine Learning, Statistical Analysis, Business Strategy, Market Research
+              • SQL, Python (Pandas, scikit-learn, Seaborn), and Data Visualization (Power BI, Tableau)
+              • Data Storytelling, Stakeholder Engagement, and Strategic Consulting
+
+              Open to opportunities in data analytics, business intelligence, and data science, with a strong focus on driving business strategy and measurable outcomes through data-driven insights.
+            </p>
+
+            <div class="about_info">
+              <div><span class="about_info-title">3+</span><span class="about_info-name">Analytics <br/> projects</span></div>
+              <div><span class="about_info-title">4</span><span class="about_info-name">Organizations <br/> worked</span></div>
+              <div><span class="about_info-title">2</span><span class="about_info-name">Continents <br/> experience</span></div>
+            </div>
+
+            <div class="about_button">
+              <!-- Updated resume link -->
+              <a href="/PaartKatole_Resume.pdf" class="button button--flex">Download Resume <i class="uil uil-download-alt button_icon"></i></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== SKILLS ====================-->
+      <section class="skills section" id="skills">
+        <h2 class="section_title">Skills</h2>
+        <span class="section_subtitle">Technical</span>
+
+        <div class="skills_container container grid">
+          <div class="skills_content">
+            <div class="skills_header">
+              <i class="uil uil-arrow skills_icon"></i>
+              <div><h1 class="skills_title">Programming</h1><span class="skills_subtitle">Languages</span></div>
+              <i class="uil uil-angle-up skills_arrow"></i>
+            </div>
+
+            <div class="skills_list grid">
+              <div class="skills_data"><div class="skills_title"><h3 class="skills_name">Python</h3><span class="skills_number">Advanced</span></div><div class="skills_bar"><span class="skills_percentage skills_cpp"></span></div></div>
+              <div class="skills_data"><div class="skills_title"><h3 class="skills_name">SQL</h3><span class="skills_number">Advanced</span></div><div class="skills_bar"><span class="skills_percentage skills_dsa"></span></div></div>
+              <div class="skills_data"><div class="skills_title"><h3 class="skills_name">R</h3><span class="skills_number">Intermediate</span></div><div class="skills_bar"><span class="skills_percentage skills_oop"></span></div></div>
+            </div>
+          </div>
+
+          <div class="skills_content">
+            <div class="skills_header">
+              <i class="uil uil-brackets-curly skills_icon"></i>
+              <div><h1 class="skills_title">Analytics & Tools</h1><span class="skills_subtitle">BI & Experimentation</span></div>
+              <i class="uil uil-angle-down skills_arrow"></i>
+            </div>
+
+            <div class="skills_list grid">
+              <div class="skills_data"><div class="skills_title"><h3 class="skills_name">Power BI, Tableau</h3><span class="skills_number">Dashboards & KPIs</span></div><div class="skills_bar"><span class="skills_percentage skills_react"></span></div></div>
+              <div class="skills_data"><div class="skills_title"><h3 class="skills_name">Experiment Design, A/B</h3><span class="skills_number">Hypothesis → Impact</span></div><div class="skills_bar"><span class="skills_percentage skills_node"></span></div></div>
+              <div class="skills_data"><div class="skills_title"><h3 class="skills_name">APIs, Git/GitHub</h3><span class="skills_number">Shipping & Collab</span></div><div class="skills_bar"><span class="skills_percentage skills_mongo"></span></div></div>
+            </div>
+          </div>
+
+          <div class="skills_content">
+            <div class="skills_header">
+              <i class="uil uil-language skills_icon"></i>
+              <div><h1 class="skills_title">Languages</h1><span class="skills_subtitle">Spoken</span></div>
+              <i class="uil uil-angle-down skills_arrow"></i>
+            </div>
+
+            <div class="skills_list grid">
+              <div class="skills_data"><div class="skills_title"><h3 class="skills_name">English</h3><span class="skills_number">Fluent</span></div><div class="skills_bar"><span class="skills_percentage skills_english"></span></div></div>
+              <div class="skills_data"><div class="skills_title"><h3 class="skills_name">Hindi</h3><span class="skills_number">Native</span></div><div class="skills_bar"><span class="skills_percentage skills_hindi"></span></div></div>
+              <div class="skills_data"><div class="skills_title"><h3 class="skills_name">Marathi</h3><span class="skills_number">Native</span></div><div class="skills_bar"><span class="skills_percentage skills_marathi"></span></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== QUALIFICATION ====================-->
+      <section class="qualification section">
+        <h2 class="section_title">Qualification</h2>
+        <span class="section_subtitle">My journey</span>
+
+        <div class="qualification_container container">
+          <div class="qualification_tabs">
+            <div class="qualification_button button--flex qualification_active" data-target='#education'>
+              <i class="uil uil-graduation-cap qualification_icon"></i> Education
+            </div>
+            <div class="qualification_button button--flex" data-target='#work'>
+              <i class="uil uil-briefcase-alt"></i> Work
+            </div>
+          </div>
+
+          <div class="qualification_sections">
+            <div class="qualification_content qualification_active" data-content id="education">
+              <div class="qualification_data">
+                <div>
+                  <h3 class="qualification_title">UCLA Anderson School of Management</h3>
+                  <span class="qualification_subtitle">M.S. in Business Analytics</span>
+                  <div class="qualification_calender"><i class="uil uil-calendar-alt"></i> 2025 – 2026</div>
+                </div>
+                <div><span class="qualification_rounder"></span><span class="qualification_line"></span></div>
+              </div>
+
+              <div class="qualification_data">
+                <div></div>
+                <div><span class="qualification_rounder"></span></div>
+                <div>
+                  <h3 class="qualification_title">Indian Institute of Technology, Bombay</h3>
+                  <span class="qualification_subtitle">B.Tech Civil Engineering</span>
+                  <div class="qualification_calender"><i class="uil uil-calendar-alt"></i> 2020 – 2024</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="qualification_content" data-content id="work">
+              <div class="qualification_data">
+                <div></div>
+                <div><span class="qualification_rounder"></span><span class="qualification_line"></span></div>
+                <div>
+                  <h3 class="qualification_title">EY-Parthenon</h3>
+                  <span class="qualification_subtitle">Business Consulting Intern</span>
+                  <div class="qualification_calender"><i class="uil uil-calendar-alt"></i> Feb – Mar 2025</div>
+                </div>
+              </div>
+
+              <div class="qualification_data">
+                <div>
+                  <h3 class="qualification_title">Putzmeister</h3>
+                  <span class="qualification_subtitle">Operations Analyst Intern</span>
+                  <div class="qualification_calender"><i class="uil uil-calendar-alt"></i> May – Jul 2023</div>
+                </div>
+                <div><span class="qualification_rounder"></span><span class="qualification_line"></span></div>
+              </div>
+
+              <div class="qualification_data">
+                <div></div>
+                <div><span class="qualification_rounder"></span><span class="qualification_line"></span></div>
+                <div>
+                  <h3 class="qualification_title">Sohar University</h3>
+                  <span class="qualification_subtitle">Data Scientist</span>
+                  <div class="qualification_calender"><i class="uil uil-calendar-alt"></i> Apr – Jul 2024</div>
+                </div>
+              </div>
+
+              <div class="qualification_data">
+                <div>
+                  <h3 class="qualification_title">IMH (IIT Bombay based tech consulting startup</h3>
+                  <span class="qualification_subtitle">Co-founder & Project Lead</span>
+                  <div class="qualification_calender"><i class="uil uil-calendar-alt"></i> 2021 – 2022</div>
+                </div>
+                <div><span class="qualification_rounder"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== PORTFOLIO ====================-->
+      <section class="portfolio section" id="portfolio">
+        <h2 class="section_title">Projects</h2>
+        <span class="section_subtitle">Selected work</span>
+
+        <div class="portfolio_container container swiper-container">
+          <div class="swiper-wrapper">
+
+            <!-- Project 1 -->
+            <div class="portfolio_content grid swiper-slide">
+              <img src="assets/img/flat-design-objects-work-desk-office-desk-books.jpg" alt="" class="portfolio_img">
+              <div class="portfolio_data">
+                <h3 class="portfolio_title">Predictive Maintenance for Heavy Machinery</h3>
+                <p class="portfolio_description">
+                  SQL + Power BI monitoring suite with automated KPIs and risk alerts; ML-assisted failure flags contributing to ~40% reduction in unplanned downtime.
+                </p>
+                <a href="<repo-or-case-study-link>" class="button button--flex button--small portfolio_button" target="_blank">
+                  Details <i class="uil uil-arrow-right button_icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="portfolio_content grid swiper-slide">
+              <img src="assets/img/Deep learning.png" alt="" class="portfolio_img">
+              <div class="portfolio_data">
+                <h3 class="portfolio_title">IPL Analytics — Win Probabilities & Player Impact</h3>
+                <p class="portfolio_description">
+                  12-year dataset; match outcome models and player impact analysis with interactive visuals and tactical narratives.
+                </p>
+                <a href="<notebook-or-demo-link>" class="button button--flex button--small portfolio_button" target="_blank">
+                  Notebook <i class="uil uil-arrow-right button_icon"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="portfolio_content grid swiper-slide">
+              <img src="assets/img/deep-learning-for-ocr-1024x442.jpg" alt="" class="portfolio_img">
+              <div class="portfolio_data">
+                <h3 class="portfolio_title">WEEE Dismantling ROI & Time Modeling</h3>
+                <p class="portfolio_description">
+                  Cleaned 1,000+ records; regressions for time vs. complexity; identified ROI levers to optimize throughput.
+                </p>
+                <a href="<report-link>" class="button button--flex button--small portfolio_button" target="_blank">
+                  Report <i class="uil uil-arrow-right button_icon"></i>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Swiper arrows/pagination kept -->
+          <div class="swiper-button-next"><i class="uil uil-angle-right-b swiper-portfolio-icon"></i></div>
+          <div class="swiper-button-prev"><i class="uil uil-angle-left-b swiper-portfolio-icon"></i></div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <!--==================== CONTACT ====================-->
+      <section class="contact section" id="contact">
+        <h2 class="section_title">Contact Me</h2>
+        <span class="section_subtitle">Get in touch</span>
+
+        <div class="contact_container container grid">
+          <div>
+            <div class="contact_information">
+              <i class="uil uil-phone contact_icon"></i>
+              <div><h3 class="contact_title">Call Me</h3><span class="contact_subtitle">+1 (213) 859-5507</span></div>
+            </div>
+
+            <div class="contact_information">
+              <i class="uil uil-envelope contact_icon"></i>
+              <div><h3 class="contact_title">Email</h3><span class="contact_subtitle"> pkatole24@outlook.com </span></div>
+            </div>
+
+            <div class="contact_information">
+              <i class="uil uil-map-marker-alt contact_icon"></i>
+              <div><h3 class="contact_title">Location</h3><span class="contact_subtitle">Los Angeles, CA</span></div>
+            </div>
+          </div>
+
+          <!-- Keep your form provider or switch to Formspree -->
+          <form action="https://formsubmit.co/pkatole24@outlook.com" class="contact_form grid" method="POST">
+            <div class="contact_input grid">
+              <div class="contact_content">
+                <label class="contact_label">Name : </label>
+                <input type="text" class="contact_label" name="name" required>
+              </div>
+            </div>
+
+            <div class="contact_content">
+              <label class="contact_label">Email :</label>
+              <input type="email" class="contact_label" name="email" required>
+            </div>
+
+            <div class="contact_content">
+              <label class="contact_label">Subject :</label>
+              <input type="text" class="contact_label" name="subject">
+            </div>
+
+            <div class="contact_content">
+              <label class="contact_label">Message :</label>
+              <textarea cols="0" rows="7" class="contact_input" name="message" required></textarea>
+            </div>
+
+            <div>
+              <button type="submit" class="button button--flex">
+                Send Message <i class="uil uil-message button_icon"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+      <div class="footer_bg">
+        <div class="footer_container container grid">
+          <div>
+            <h1 class="footer_title">Paarth</h1>
+            <span class="footer_subtitle">Data Science and Analytics / Applied AI/ML </span>
+          </div>
+
+          <ul class="footer_links">
+            <li><a href="#portfolio" class="footer_link">Projects</a></li>
+            <li><a href="#skills" class="footer_link">Skills</a></li>
+            <li><a href="#contact" class="footer_link">Contact</a></li>
           </ul>
-          <p style="font-size:12px;color:#9ca3af">Static, fast, and tracker-free.</p>
+
+          <div class="footer_social">
+            <a href="https://www.linkedin.com/in/<your-linkedin>/" target="_blank" class="footer_social"><i class="uil uil-linkedin-alt"></i></a>
+            <a href="https://github.com/<your-github>" target="_blank" class="footer_social"><i class="uil uil-github-alt"></i></a>
+            <a href="https://instagram.com/<your-ig>" target="_blank" class="footer_social"><i class="uil uil-instagram"></i></a>
+          </div>
+
+          <div><p class="footer_copy">© <script>document.write(new Date().getFullYear())</script> Paarth Katole. All rights reserved.</p></div>
         </div>
       </div>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Paarth Katole · Built with GitHub Pages
     </footer>
-  </main>
 
-  <script>
-    // theme toggle
-    const btn = document.getElementById('theme');
-    const isLight = localStorage.getItem('theme') === 'light';
-    if(isLight) document.documentElement.classList.add('light');
-    btn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('light');
-      localStorage.setItem('theme', document.documentElement.classList.contains('light') ? 'light' : 'dark');
-    });
-    // year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+    <!--==================== SCROLL TOP ====================-->
+    <a href="#" class="scrollup" id="scroll-up"><i class="uil uil-arrow-up scrollup_icon"></i></a>
+
+    <!--==================== SWIPER JS ===================-->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
