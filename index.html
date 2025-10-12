@@ -19,10 +19,8 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
 
     <!--==================== SWIPER CSS ====================-->
-    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
 
     <!--==================== BASE THEME CSS (your original) ====================-->
-    <link rel="stylesheet" href="assets/css/styles.css" />
 
     <!--==================== FONTS: Garamond ====================-->
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -150,6 +148,81 @@
         --pk-btn-text: #0b1116;
       }
     </style>
+    <style>
+  /* Reset / base */
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  img{max-width:100%;display:block}
+  ul{list-style:none;margin:0;padding:0}
+  a{text-decoration:none;color:inherit}
+
+  /* UCLA palette + Garamond */
+  :root{
+    --pk-bg:#fafbff; --pk-surface:#ffffff; --pk-text:#0c1116; --pk-sub:#5f6b7a;
+    --pk-primary:#2774AE; --pk-accent:#FFC72C; --pk-line:#e6ebf2; --pk-btn-text:#fff;
+    --container:980px;
+  }
+  body{background:var(--pk-bg); color:var(--pk-text); font-family:"EB Garamond", Garamond, Georgia, serif; line-height:1.6}
+  .container{max-width:var(--container); margin:0 auto; padding:20px}
+
+  /* Header / Nav */
+  .header{position:sticky;top:0;background:rgba(250,251,255,.85);backdrop-filter:blur(6px);border-bottom:1px solid var(--pk-line);z-index:100}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .nav_logo{font-weight:700;color:var(--pk-primary)}
+  .nav_menu{display:flex;gap:18px}
+  .nav_list{display:flex;gap:18px}
+  .nav_link{color:var(--pk-primary);font-weight:600}
+  .nav_link:hover{text-decoration:underline}
+  .nav_btns{display:flex;align-items:center;gap:10px}
+  #nav-toggle,#nav-close{display:none}
+
+  /* Sections */
+  .section{padding:44px 0}
+  .section_title{color:var(--pk-primary);font-size:28px;margin:0 0 8px}
+  .section_subtitle{color:var(--pk-sub);display:block;margin-bottom:16px}
+
+  /* Home */
+  .home_container{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center}
+  .home_title{color:var(--pk-primary);font-size:36px;margin:0 0 6px}
+  .home_subtitle{color:var(--pk-primary);font-size:20px;margin:0 0 8px}
+  .home_description{margin:6px 0 14px}
+
+  /* Buttons */
+  .button,.button--flex,.portfolio_button{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--pk-primary); color:var(--pk-btn-text); border:1px solid transparent;
+    padding:10px 14px; border-radius:10px; cursor:pointer; transition:.15s ease;
+  }
+  .button:hover,.button--flex:hover,.portfolio_button:hover{
+    transform:translateY(-1px); box-shadow:0 8px 20px rgba(39,116,174,.22);
+  }
+
+  /* Cards / blocks */
+  .skills_content,.qualification_content,.portfolio_content,.contact_form,.footer_bg{
+    background:var(--pk-surface); border:1px solid var(--pk-line); border-radius:14px; padding:18px;
+  }
+
+  /* “Slider” grid (no JS yet) */
+  .swiper-container{overflow:hidden}
+  .swiper-wrapper{display:grid; grid-template-columns:1fr; gap:16px}
+
+  /* Contact list */
+  .contact_information{display:flex;gap:10px;align-items:flex-start;margin-bottom:10px}
+  .contact_title{color:var(--pk-primary); margin:0}
+  .contact_subtitle{color:var(--pk-sub)}
+
+  /* Footer */
+  .footer_bg{border-top:1px solid var(--pk-line); margin-top:30px; padding:24px}
+  .footer_title{color:var(--pk-primary); margin:0}
+  .footer_subtitle,.footer_copy{color:var(--pk-sub)}
+
+  /* Mobile */
+  @media (max-width:900px){
+    .home_container{grid-template-columns:1fr}
+    .nav_list{flex-wrap:wrap}
+  }
+</style>
+
   </head>
 
   <body>
@@ -520,9 +593,9 @@
     <a href="#" class="scrollup" id="scroll-up"><i class="uil uil-arrow-up scrollup_icon"></i></a>
 
     <!--==================== SWIPER JS ===================-->
-    <script src="assets/js/swiper-bundle.min.js"></script>
+    
 
     <!--==================== MAIN JS ====================-->
-    <script src="assets/js/main.js"></script>
+    
   </body>
 </html>
