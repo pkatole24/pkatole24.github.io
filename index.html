@@ -155,6 +155,16 @@ section .title::after{
 
 /* Keep card headings legible on white cards */
 .card h3{ color: var(--primary); }
+ /* Make Quick Facts (and any card headings) UCLA blue */
+.card h3,
+.card .title,
+.card .subtitle {
+  color: var(--primary) !important;
+  text-shadow: none !important;
+}
+
+/* Links inside cards should also be blue */
+.card a { color: var(--primary) !important; }
 
 
   </style>
@@ -183,8 +193,10 @@ section .title::after{
     <section class="hero" id="home">
       <div class="blurb">
         <h1>Hi, I’m Paarth Katole</h1>
-        <h3>UCLA MS Business Analytics ’26 · Data / Product / Supply Chain Analytics</h3>
-        <p>I blend SQL/Python with product sense to improve throughput, reduce downtime, and make clear, data-driven decisions. UCLA Anderson · IIT Bombay ’24.</p>
+        <h3>UCLA MS Business Analytics ’26 · Data Science / Product Analytics / Supply Chain Analytics</h3>
+        <p>A results-oriented analyst skilled in stakeholder engagement, data storytelling, and insight generation, translating complex data into business value and measurable impact across functions.</p>
+        <p>Proficient in predictive analytics, forecasting, and data visualization, leveraging statistical models to uncover patterns and guide business strategy.</p>
+        <p> UCLA · IIT Bombay ’24</p>
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px">
           <a class="btn" href="#contact">Contact Me</a>
           <a class="btn alt" href="/PaartKatole_Resume.pdf">Download Resume</a>
@@ -193,7 +205,7 @@ section .title::after{
       <div class="card">
         <h3 class="subtitle" style="margin:0 0 10px; color:var(--primary)">Quick facts</h3>
         <ul class="list">
-          <li><span class="dot"></span><div>Projects: Predictive Maintenance Models, Sports analytics, Modelling dismantling time for Waste Electronic Devices.</div></li>
+          <li><span class="dot"></span><div>Predictive Modeling, Regression, Clustering, A/B Testing, Causal Inference, GenAI (OpenAI APIs)</div></li>
          </ul>
         <div class="kv" style="margin-top:14px">
           <div><strong>3+</strong><br/>Analytics projects</div>
@@ -206,27 +218,16 @@ section .title::after{
     <!-- ===== Projects ===== -->
     <section id="projects">
       <h2 class="title">Projects</h2>
-      <p class="subtitle">Selected work</p>
+      
       <div class="grid two">
         <article class="card">
-          <h3>Predictive Maintenance for Heavy Machinery</h3>
-          <p>SQL + Power BI monitoring suite with automated KPIs and risk alerts; ML-assisted failure flags contributing to ~40% reduction in unplanned downtime.</p>
-          <p><a href="#">Case study</a></p>
+          <h3>Sports Analytics — Predicting Outcomes and Scores</h3>
+          <p>Built Random Forest and SVM regression models that predicted match outcomes with ~90% accuracy; designed evaluation metrics and visual dashboards to analyze model performance</p>
+          <p>Integrated APIs for real-time natural language generation, demonstrating applications in real-time reporting and user engagement analytics</p>
         </article>
         <article class="card">
-          <h3>IPL Analytics — Win Probabilities & Player Impact</h3>
-          <p>12-year dataset; match outcome models and player impact analysis with interactive visuals and tactical narratives.</p>
-          <p><a href="#">Notebook / Demo</a></p>
-        </article>
-        <article class="card">
-          <h3>WEEE Dismantling ROI & Time Modeling</h3>
-          <p>Cleaned 1,000+ records; regressions for time vs. complexity; identified ROI levers to optimize throughput.</p>
-          <p><a href="#">Report</a></p>
-        </article>
-        <article class="card">
-          <h3>Live Rank Prediction for EdTech</h3>
-          <p>ML-based live rank predictor (500k+ users); focused on reliability and UX to increase engagement and trust.</p>
-          <p><a href="#">Overview</a></p>
+          <h3>Retail Marketing Optimization - Customer Segmentation</h3>
+          <p>Applied K-Means clustering on customer transaction data to uncover user behavior patterns and optimize audience segmentation; evaluated cohort performance through A/B analysis to guide personalized marketing and ROI improvement</p>
         </article>
       </div>
     </section>
@@ -234,27 +235,26 @@ section .title::after{
     <!-- ===== Experience ===== -->
     <section id="experience">
       <h2 class="title">Experience</h2>
-      <p class="subtitle">Recent roles</p>
       <div class="grid two">
         <div class="card">
           <h3 style="margin:0 0 4px">EY-Parthenon — Business Consulting Intern</h3>
           <small style="color:var(--muted)">Feb–Mar 2025</small>
-          <p>Healthcare market entry for South India: competitor benchmarking, district-level revenue sizing (USD 300–600M), and go-to-market recommendations.</p>
+          <p>Healthcare market entry strategy for three districts in South India: competitor benchmarking, district-level revenue sizing (USD 300M), and go-to-market recommendations.</p>
         </div>
         <div class="card">
           <h3 style="margin:0 0 4px">Putzmeister — Operations Analyst Intern</h3>
           <small style="color:var(--muted)">May–Jul 2023</small>
-          <p>Built SQL-backed machine-health dashboards and predictive maintenance workflows in Power BI; enabled real-time alerts and KPI tracking.</p>
+          <p>Built SQL-backed machine-health dashboards and ML-based predictive maintenance models; enabled real-time risk alerts and KPI tracking.</p>
         </div>
         <div class="card">
-          <h3 style="margin:0 0 4px">Sohar University — Data Analyst (WEEE)</h3>
+          <h3 style="margin:0 0 4px">Sohar University — Data Scientist (Waste Electrical and Electronic Equipment (WEEE) Project)</h3>
           <small style="color:var(--muted)">Apr–Jul 2024</small>
-          <p>Modeled dismantling time vs. device complexity; recommended ROI levers to improve throughput for e-waste operations.</p>
+          <p>Engineered and validated predictive regression models to estimate task completion time from multi-dimensional features, improving forecast accuracy by 25%</p>
         </div>
         <div class="card">
-          <h3 style="margin:0 0 4px">IMH (IIT-B) — Associate Consultant</h3>
+          <h3 style="margin:0 0 4px">IMH (IIT Bombay based consulting startup) — Project Lead</h3>
           <small style="color:var(--muted)">2021–2022</small>
-          <p>Delivered analytics for large student cohorts; ran SPSS surveys and built ML tools to inform decision-making.</p>
+          <p>Designed and deployed an ML-based ranking tool using supervised learning on large-scale performance data; iterated feature selection and model evaluation to optimize prediction accuracy, driving engagement and adoption by 500K+ users</p>
         </div>
       </div>
     </section>
@@ -270,6 +270,7 @@ section .title::after{
             <li><span class="dot"></span><div>SQL (Postgres, MySQL)</div></li>
             <li><span class="dot"></span><div>Python (pandas, scikit-learn)</div></li>
             <li><span class="dot"></span><div>R</div></li>
+            <li><span class="dot"></span><div>PySpark</div></li>
           </ul>
         </div>
         <div class="card">
@@ -282,7 +283,7 @@ section .title::after{
         <div class="card">
           <h3>Ops & Tooling</h3>
           <ul class="list">
-            <li><span class="dot"></span><div>Git/GitHub, REST APIs, Jupyter, Excel</div></li>
+            <li><span class="dot"></span><div>Git/GitHub, Jupyter, Excel, SPSS, Microsoft Power Query</div></li>
           </ul>
         </div>
       </div>
