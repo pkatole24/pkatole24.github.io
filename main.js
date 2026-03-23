@@ -1,4 +1,4 @@
-﻿/* main.js - Portfolio interactivity (full) */
+/* main.js - Portfolio interactivity (full) */
 
 /* ── Resume map per role ─────────────────────────── */
 const resumeMap = {
@@ -63,6 +63,15 @@ window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
     if (loader) loader.classList.add('hidden');
   }, 1600);
+
+  /* ── Visitor counter (CountAPI) ───────────────────── */
+  const countEl = document.getElementById('visit-count');
+  if (countEl) {
+    fetch('https://api.countapi.xyz/hit/pkatole24.github.io/visits')
+      .then(r => r.json())
+      .then(data => { countEl.textContent = data.value.toLocaleString(); })
+      .catch(() => { countEl.textContent = '--'; });
+  }
 });
 
 /* ── DOM ready ───────────────────────────────────── */
