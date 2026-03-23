@@ -4,335 +4,438 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Paarth Katole · Portfolio</title>
-
-  <!-- Garamond -->
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-
-  <style>
-    /* ===== Base & Theme (UCLA True Blue & Gold) ===== */
-    :root{
-      --bg:#f7f9ff;         /* very light blue background */
-      --surface:#ffffff;    /* cards */
-      --text:#0b1220;       /* body text */
-      --muted:#5f6b7a;      /* secondary text */
-      --primary:#2774AE;    /* UCLA True Blue */
-      --primary-900:#1f5d8b;
-      --gold:#FFC72C;       /* UCLA Gold */
-      --line:#e7edf6;       /* borders */
-      --container: 1080px;
-      --radius: 14px;
-      --shadow: 0 10px 30px rgba(39,116,174,.10);
-    }
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family:"EB Garamond", Garamond, Georgia, serif;
-      background:var(--bg); color:var(--text); line-height:1.6;
-    }
-    img{max-width:100%; display:block}
-    a{color:var(--primary); text-decoration:none}
-    a:hover{color:var(--primary-900)}
-    .container{max-width:var(--container); margin:0 auto; padding:24px}
-
-    /* ===== Header ===== */
-    .header{
-      position:sticky; top:0; z-index:50;
-      background:rgba(247,249,255,.85); backdrop-filter:blur(8px);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px}
-    .brand{font-weight:700; color:var(--primary); font-size:22px}
-    .nav ul{display:flex; gap:18px; list-style:none; margin:0; padding:0}
-    .nav a{font-weight:600}
-
-    /* ===== Sections ===== */
-    section{padding:56px 0}
-    .title{font-size:32px; margin:0 0 6px; color:var(--primary)}
-    .subtitle{color:var(--muted); margin:0 0 16px}
-
-    /* ===== Hero ===== */
-    .hero{display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center}
-    .hero h1{font-size:40px; margin:0 0 10px; color:var(--primary)}
-    .hero h3{margin:0 0 10px; color:var(--primary)}
-    .btn{
-      display:inline-flex; align-items:center; gap:10px;
-      background:var(--primary); color:#fff; border:0; padding:12px 16px;
-      border-radius:12px; box-shadow:var(--shadow); cursor:pointer; font-weight:600;
-    }
-    .btn:hover{transform:translateY(-1px)}
-    .btn.alt{background:var(--gold); color:#0b1220}
-
-    /* ===== Cards / grids ===== */
-    .grid{display:grid; gap:18px}
-    .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
-    .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
-    .card{
-      background:var(--surface); border:1px solid var(--line);
-      border-radius:var(--radius); padding:20px; box-shadow:var(--shadow);
-    }
-    .kv{display:flex; gap:16px; color:var(--muted)}
-    .kv div{flex:1; text-align:center; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:12px}
-
-    /* ===== Lists ===== */
-    .list{list-style:none; margin:0; padding:0}
-    .list li{display:flex; align-items:flex-start; gap:10px; margin:8px 0}
-    .dot{width:10px; height:10px; border-radius:50%; background:var(--gold); margin-top:9px; flex:0 0 10px}
-
-    /* ===== Footer ===== */
-    footer{border-top:1px solid var(--line); padding:28px 0; color:var(--muted); text-align:center}
-
-    /* ===== Responsive ===== */
-    @media (max-width:1000px){
-      .hero{grid-template-columns:1fr}
-      .grid.two{grid-template-columns:1fr}
-      .grid.three{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width:640px){
-      .grid.three{grid-template-columns:1fr}
-      .hero h1{font-size:34px}
-      .title{font-size:28px}
-    }
-    /* ===== UCLA creative background ===== */
-body{
-  /* layered: gold glows + blue gradient */
-  background:
-    radial-gradient(900px 420px at 110% -10%, rgba(255,199,44,0.18), transparent 45%),
-    radial-gradient(800px 380px at -10% 10%, rgba(139,184,232,0.16), transparent 50%),
-    linear-gradient(135deg, #1F5D8B 0%, #2774AE 45%, #0D2B57 100%);
-  color: var(--text);
-}
-
-/* header on dark background */
-.header{
-  background: transparent;
-  border-bottom: 0;
-}
-.nav a{ color: #ffffff; }
-.brand{ color: #FFC72C; text-shadow: 0 1px 0 rgba(0,0,0,.25); }
-
-/* hero: make left column readable on dark bg */
-.hero{ align-items: stretch; }
-.hero .blurb{
-  background: rgba(255,255,255,0.88);
-  border: 1px solid rgba(231,237,246,0.8);
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 14px 40px rgba(39,116,174,.20);
-}
-
-/* keep cards “floating” */
-.card{
-  background: rgba(255,255,255,0.94);
-  border: 1px solid rgba(231,237,246,.9);
-  box-shadow: 0 16px 36px rgba(15,27,46,.18);
-}
-
-/* buttons pop on blue */
-.btn{ box-shadow: 0 10px 24px rgba(39,116,174,.28); }
-.btn.alt{ background: var(--gold); color:#0b1220; box-shadow: 0 10px 24px rgba(255,199,44,.28); }
-
-/* footer on dark bg */
-footer{ background: transparent; color: #d7e6f8; }
-footer a{ color:#fff; }
-    /* High-contrast section headings on UCLA blue background */
-section .title{
-  color: #ffffff !important;
-  text-shadow: 0 1px 0 rgba(0,0,0,.25);
-}
-section .subtitle{
-  color: rgba(255,255,255,.88) !important;
-}
-
-/* Gold accent underline for H2 titles */
-section .title::after{
-  content:"";
-  display:block;
-  width:56px; height:3px;
-  background: var(--gold);
-  border-radius:2px;
-  margin-top:6px;
-}
-
-/* Keep card headings legible on white cards */
-.card h3{ color: var(--primary); }
- /* Make Quick Facts (and any card headings) UCLA blue */
-.card h3,
-.card .title,
-.card .subtitle {
-  color: var(--primary) !important;
-  text-shadow: none !important;
-}
-
-/* Links inside cards should also be blue */
-.card a { color: var(--primary) !important; }
-/* Two-card layout tuning */
-.kv{
-  justify-content: center;             /* center the row */
-  flex-wrap: wrap;                      /* wrap on small screens */
-  gap: 16px;                            /* consistent spacing (if not already) */
-}
-.kv div{
-  flex: 0 1 260px;                      /* tidy card width */
-  text-align: center;                   
-}
-.kv strong{
-  font-size: 28px;                      /* make numbers pop */
-  color: var(--primary);
-}
-  </style>
+  <meta name="description" content="Paarth Katole — MS Business Analytics at UCLA. Data Science, Product Analytics &amp; Operations."/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <!-- ===== Header ===== -->
-  <header class="header">
-    <div class="container nav">
-      <div class="brand">Paarth Katole</div>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a class="btn alt" href="/PaarthKatole_Resume.pdf">Resume</a></li>
-        </ul>
-      </nav>
+<!-- ===== LOADING SCREEN ===== -->
+<div id="loader">
+  <div class="loader-content">
+    <div class="loader-initials">PK</div>
+    <div class="loader-track"><div class="loader-fill"></div></div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="container nav-wrap">
+    <a class="brand" href="#home">Paarth Katole</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn-resume" id="resume-btn" href="/PaarthKatole_Resume.pdf" target="_blank">Resume ↗</a>
+  </div>
+  <!-- Role Filter Bar -->
+  <div class="role-bar">
+    <div class="container role-bar-inner">
+      <span class="role-label">View as:</span>
+      <div class="role-pills" role="group" aria-label="Role filter">
+        <button class="role-pill active" data-role="all">All</button>
+        <button class="role-pill" data-role="ds">Data Science</button>
+        <button class="role-pill" data-role="da">Data Analyst</button>
+        <button class="role-pill" data-role="pa">Product Analyst</button>
+        <button class="role-pill" data-role="pm">Product Manager</button>
+      </div>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main class="container">
+<main>
 
-    <!-- ===== Hero ===== -->
-    <section class="hero" id="home">
-      <div class="blurb">
-        <h1>Hello There! This is Paarth</h1>
-        <h3>UCLA MS Business Analytics ’26 · Data Science / Product Analytics / Operations & Supply Chain Analytics</h3>
-        <p>A results-oriented analyst skilled in stakeholder engagement, data storytelling, and insight generation, translating complex data into business value and measurable impact across functions.</p>
-        <p>Proficient in predictive analytics, forecasting, and data visualization, leveraging statistical models to uncover patterns and guide business strategy.</p>
-        <p> UCLA · IIT Bombay ’24</p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px">
-          <a class="btn" href="#contact">Contact Me</a>
-          <a class="btn alt" href="/PaarthKatole_Resume.pdf">Download Resume</a>
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div class="hero-bio">
+        <p class="hero-eyebrow">👋 Hello, I'm</p>
+        <h1 class="hero-name">Paarth Katole</h1>
+        <h2 class="hero-role" id="hero-role">Data Scientist &amp; Product Analyst</h2>
+        <p class="hero-desc">A results-oriented analyst skilled in stakeholder engagement, data storytelling, and insight generation — translating complex data into measurable business value across functions.</p>
+        <p class="hero-desc">Proficient in predictive analytics, forecasting, and data visualization, leveraging statistical models to uncover patterns and guide strategy.</p>
+        <p class="hero-edu">🎓 UCLA MS Business Analytics '26 &nbsp;·&nbsp; IIT Bombay B.Tech '24</p>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="#contact">Get in Touch</a>
+          <a class="btn-secondary" id="resume-cta" href="/PaarthKatole_Resume.pdf" target="_blank">Download Resume ↗</a>
         </div>
       </div>
-      <div class="card">
-        <h3 class="subtitle" style="margin:0 0 10px; color:var(--primary)">Quick facts</h3>
-        <ul class="list">
-          <li><span class="dot"></span><div> I specialize in Predictive Modeling, Regression, Clustering, A/B Testing, Causal Inference, GenAI for Data Science</div></li>
-         </ul>
-        <div class="kv" style="margin-top:14px">
-          <div><strong>3+</strong><br/>Analytics projects</div>
-          <div><strong>4</strong><br/>Organizations · Cross-Industry Experience</div>
+      <div class="hero-right">
+        <div class="avatar-wrap">
+          <div class="avatar">PK</div>
+          <div class="avatar-badge">Open to Work</div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><strong>6+</strong><span>Projects</span></div>
+          <div class="stat"><strong>4</strong><span>Orgs</span></div>
+          <div class="stat"><strong>8.84</strong><span>GPA @ IIT-B</span></div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ===== Projects ===== -->
-    <section id="projects">
-      <h2 class="title">Projects</h2>
-      
-      <div class="grid two">
-        <article class="card">
-          <h3>Sports Analytics — Predicting Outcomes and Scores</h3>
-          <p>Built Random Forest and SVM regression models that predicted match outcomes with ~90% accuracy; designed evaluation metrics and visual dashboards to analyze model performance</p>
-          <p>Integrated APIs for real-time natural language generation, demonstrating applications in real-time reporting and user engagement analytics</p>
-        </article>
-        <article class="card">
-          <h3>Retail Marketing Optimization - Customer Segmentation</h3>
-          <p>Applied K-Means clustering on customer transaction data to uncover user behavior patterns and optimize audience segmentation; evaluated cohort performance through A/B analysis to guide personalized marketing and ROI improvement</p>
-        </article>
-      </div>
-    </section>
+  <!-- ===== EDUCATION ===== -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <p class="section-sub">Academic background at world-class institutions</p>
+      <div class="edu-grid">
 
-    <!-- ===== Experience ===== -->
-    <section id="experience">
-      <h2 class="title">Experience</h2>
-      <div class="grid two">
-        <div class="card">
-          <h3 style="margin:0 0 4px">EY-Parthenon — Business Consulting Intern</h3>
-          <small style="color:var(--muted)">Feb–Mar 2025</small>
-          <p>Researched healthcare markets across three districts and 5M+ residents, identifying critical gaps in specialist care availability and prioritizing expansion areas, guiding data-backed investment planning</p>
-          <p>Benchmarked 15+ competitors, evaluating key differentiators and proposing positioning strategies that strengthened client’s market competitiveness in a $300M+ regional market</p>       
-        </div>
-        <div class="card">
-          <h3 style="margin:0 0 4px">Putzmeister — Operations Analyst Intern</h3>
-          <small style="color:var(--muted)">May–Jul 2023</small>
-          <p>Enhanced existing SQL pipelines for IoT datapoints and deployed machine health monitoring Power BI dashboards with automated KPI tracking (e.g., uptime %, temperature), enabling real-time risk alerts</p>
-          <p>Developed and iteratively refined an ML-based predictive maintenance model using real-time IoT data; collaborated cross-functionally with engineering teams to deploy model-driven alerts that reduced unplanned downtime by 40%</p>
-        </div>
-        <div class="card">
-          <h3 style="margin:0 0 4px">Sohar University — Data Scientist (Waste Electrical and Electronic Equipment (WEEE) Project)</h3>
-          <small style="color:var(--muted)">Apr–Jul 2024</small>
-          <p>Engineered and validated predictive regression models to estimate task completion time from multi-dimensional features, improving forecast accuracy by 25%</p>
-        </div>
-        <div class="card">
-          <h3 style="margin:0 0 4px">IMH (IIT Bombay based consulting startup) — Project Lead</h3>
-          <small style="color:var(--muted)">June-Oct 2022</small>
-          <p>Designed and deployed an ML-based ranking tool using supervised learning on large-scale performance data; iterated feature selection and model evaluation to optimize prediction accuracy, driving engagement and adoption by 500K+ users</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Skills ===== -->
-    <section id="skills">
-      <h2 class="title">Skills</h2>
-      <p class="subtitle">Technical</p>
-      <div class="grid three">
-        <div class="card">
-          <h3>Languages & DB</h3>
-          <ul class="list">
-            <li><span class="dot"></span><div>SQL (Postgres, MySQL)</div></li>
-            <li><span class="dot"></span><div>Python (pandas, scikit-learn)</div></li>
-            <li><span class="dot"></span><div>R</div></li>
-            <li><span class="dot"></span><div>PySpark</div></li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Analytics & Viz</h3>
-          <ul class="list">
-            <li><span class="dot"></span><div>Power BI, Tableau (Dashboards & KPIs)</div></li>
-            <li><span class="dot"></span><div>Experiment Design & A/B Testing</div></li>
-          </ul>
-        </div>
-        <div class="card">
-          <h3>Ops & Tooling</h3>
-          <ul class="list">
-            <li><span class="dot"></span><div>Git/GitHub, Jupyter, Excel, SPSS, Microsoft Power Query</div></li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== Contact ===== -->
-    <section id="contact">
-      <h2 class="title">Contact</h2>
-      <p class="subtitle">Get in touch</p>
-      <div class="grid two">
-        <div class="card">
-          <ul class="list">
-            <li><span class="dot"></span><div>📞 +1 (213) 859-5507</div></li>
-            <li><span class="dot"></span><div>✉️ <a href="mailto:pkatole24@outlook.com">pkatole24@outlook.com</a></div></li>
-            <li><span class="dot"></span><div>📍 Los Angeles, CA</div></li>
-            <li><span class="dot"></span><div>🔗 <a href="https://www.linkedin.com/in/paarthkatole/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/pkatole24" target="_blank" rel="noopener">GitHub</a></div></li>
-          </ul>
-        </div>
-        <form class="card" action="https://formspree.io/f/<your-form-id>" method="POST">
-          <div class="grid two" style="gap:12px">
-            <input name="name" placeholder="Your name" required style="padding:12px;border-radius:10px;border:1px solid var(--line);width:100%">
-            <input name="email" type="email" placeholder="Email" required style="padding:12px;border-radius:10px;border:1px solid var(--line);width:100%">
+        <!-- UCLA -->
+        <div class="edu-card">
+          <div class="edu-logo-wrap">
+            <img class="edu-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/The_University_of_California_UCLA.svg/320px-The_University_of_California_UCLA.svg.png"
+              alt="UCLA"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="edu-logo-fallback" style="display:none">UCLA</div>
           </div>
-          <input name="subject" placeholder="Subject" style="margin-top:12px;padding:12px;border-radius:10px;border:1px solid var(--line);width:100%">
-          <textarea name="message" rows="5" placeholder="Message" required style="margin-top:12px;padding:12px;border-radius:10px;border:1px solid var(--line);width:100%"></textarea>
-          <button class="btn" type="submit" style="margin-top:12px">Send Message</button>
-        </form>
+          <div class="edu-info">
+            <h3>University of California, Los Angeles</h3>
+            <p class="edu-degree">M.S. Business Analytics</p>
+            <p class="edu-meta">Sep 2025 – Dec 2026 &nbsp;·&nbsp; Los Angeles, CA</p>
+            <div class="edu-tags">
+              <span class="tag">Predictive Modeling</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Optimization</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- IIT Bombay -->
+        <div class="edu-card">
+          <div class="edu-logo-wrap">
+            <img class="edu-logo"
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/4/45/IIT_Bombay_Logo.svg/200px-IIT_Bombay_Logo.svg.png"
+              alt="IIT Bombay"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="edu-logo-fallback" style="display:none">IIT-B</div>
+          </div>
+          <div class="edu-info">
+            <h3>Indian Institute of Technology Bombay</h3>
+            <p class="edu-degree">B.Tech Civil Engineering &nbsp;·&nbsp; Minor in CS</p>
+            <p class="edu-meta">Nov 2020 – Aug 2024 &nbsp;·&nbsp; Mumbai, India &nbsp;·&nbsp; GPA 8.84/10</p>
+            <div class="edu-tags">
+              <span class="tag">Data Structures</span>
+              <span class="tag">Statistics</span>
+              <span class="tag">ML</span>
+              <span class="tag">Operations Research</span>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-sub">Internships &amp; professional roles</p>
+      <div class="exp-list">
 
-  <footer>
-    © <span id="y"></span> Paarth Katole
-  </footer>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <h3>EY-Parthenon</h3>
+              <p class="exp-role">Business Consulting Intern &nbsp;·&nbsp; Mumbai</p>
+            </div>
+            <span class="exp-date">Feb – Mar 2025</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Researched healthcare markets across 3 districts and 5M+ residents, identifying critical gaps in specialist care availability and prioritizing expansion areas to guide data-backed investment planning.</li>
+            <li>Benchmarked 15+ competitors, evaluating key differentiators and proposing positioning strategies that strengthened client competitiveness in a $300M+ regional market.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag">Market Research</span><span class="tag">SQL</span>
+            <span class="tag">Competitive Analysis</span><span class="tag">Healthcare</span>
+          </div>
+        </div>
 
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <h3>Sohar University</h3>
+              <p class="exp-role">Data Scientist Intern &nbsp;·&nbsp; WEEE Project &nbsp;·&nbsp; Oman</p>
+            </div>
+            <span class="exp-date">Apr – Jul 2024</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Transformed manually collected WEEE dismantling records into structured SQL datasets for analysis.</li>
+            <li>Engineered and validated predictive regression models to estimate task completion time from multi-dimensional features, improving forecast accuracy by 25%.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag">Regression</span><span class="tag">SQL</span>
+            <span class="tag">Python</span><span class="tag">Forecasting</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <h3>Putzmeister Concrete Machines</h3>
+              <p class="exp-role">Operations Analyst Intern &nbsp;·&nbsp; Goa</p>
+            </div>
+            <span class="exp-date">May – Jul 2023</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Enhanced SQL pipelines for IoT datapoints and deployed Power BI dashboards with automated KPI tracking (uptime %, temperature), enabling real-time risk alerts.</li>
+            <li>Developed ML-based predictive maintenance model; collaborated with engineering teams to deploy model-driven alerts that reduced unplanned downtime by 40%.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag">SQL</span><span class="tag">Power BI</span>
+            <span class="tag">Predictive Maintenance</span><span class="tag">IoT</span><span class="tag">ML</span>
+          </div>
+        </div>
+
+        <div class="exp-card">
+          <div class="exp-header">
+            <div>
+              <h3>IMH &nbsp;—&nbsp; IIT Bombay Startup</h3>
+              <p class="exp-role">Project Lead &nbsp;·&nbsp; Mumbai</p>
+            </div>
+            <span class="exp-date">Jun – Oct 2022</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Designed and deployed an ML-based ranking tool using supervised learning on large-scale performance data; iterated feature selection to optimize prediction accuracy.</li>
+            <li>Drove engagement and adoption by 500K+ users through data-driven product decisions; used SPSS surveys to inform model refinements and stabilize user retention.</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="tag">ML</span><span class="tag">Python</span>
+            <span class="tag">Product Analytics</span><span class="tag">SPSS</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub">Select a role above to filter relevant work</p>
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- 1 — Sports Analytics -->
+        <article class="project-card" data-roles="all ds">
+          <div class="project-tags">
+            <span class="role-tag ds">Data Science</span>
+          </div>
+          <h3>Sports Analytics — Predicting Match Outcomes &amp; Scores</h3>
+          <p>Built Random Forest and SVM regression models predicting match outcomes with ~90% accuracy. Designed evaluation metrics and visual dashboards to analyse model performance. Integrated APIs for real-time natural language generation demonstrating live reporting use cases.</p>
+          <div class="tech-tags">
+            <span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">SVM</span><span class="tag">NLG APIs</span>
+          </div>
+          <a class="btn-github" href="https://github.com/pkatole24" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <!-- 2 — Customer Segmentation -->
+        <article class="project-card" data-roles="all ds da pa">
+          <div class="project-tags">
+            <span class="role-tag ds">Data Science</span>
+            <span class="role-tag da">Data Analyst</span>
+            <span class="role-tag pa">Product Analyst</span>
+          </div>
+          <h3>Retail Marketing — Customer Segmentation &amp; A/B Analysis</h3>
+          <p>Applied K-Means clustering on customer transaction data to uncover user behaviour patterns and optimise audience segmentation. Evaluated cohort performance through A/B analysis to guide personalised marketing strategy and ROI improvement.</p>
+          <div class="tech-tags">
+            <span class="tag">Python</span><span class="tag">K-Means</span><span class="tag">A/B Testing</span><span class="tag">pandas</span>
+          </div>
+          <a class="btn-github" href="https://github.com/pkatole24/Customer-Segmentation" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <!-- 3 — NFL ETL -->
+        <article class="project-card" data-roles="all ds da">
+          <div class="project-tags">
+            <span class="role-tag ds">Data Science</span>
+            <span class="role-tag da">Data Analyst</span>
+          </div>
+          <h3>NFL × Weather — ETL Performance Analytics Pipeline</h3>
+          <p>Designed and deployed a distributed ETL pipeline on GCP using Airflow and Spark to process 1M+ rows of NFL play-by-play and weather data. Implemented a dimensional schema in Snowflake with Tableau dashboards for fourth-down decision analytics.</p>
+          <div class="tech-tags">
+            <span class="tag">GCP</span><span class="tag">Airflow</span><span class="tag">Spark</span><span class="tag">Snowflake</span><span class="tag">Tableau</span>
+          </div>
+          <a class="btn-github" href="https://github.com/pkatole24/NFL-FourthDown-DecisionAnalytics" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <!-- 4 — Starbucks LLM -->
+        <article class="project-card" data-roles="all pa pm ds">
+          <div class="project-tags">
+            <span class="role-tag pa">Product Analyst</span>
+            <span class="role-tag pm">PM</span>
+            <span class="role-tag ds">Data Science</span>
+          </div>
+          <h3>Starbucks — LLM-Powered Product Search &amp; Retrieval</h3>
+          <p>Built an end-to-end semantic search system for Starbucks menu items. Used LLM-powered constraint extraction ("vegan", "under 200 calories") combined with semantic ranking to return relevant products. Evaluated using NDCG@K to optimise retrieval ranking.</p>
+          <div class="tech-tags">
+            <span class="tag">Python</span><span class="tag">LLM APIs</span><span class="tag">Semantic Search</span><span class="tag">NDCG@K</span>
+          </div>
+          <a class="btn-github" href="https://github.com/pkatole24/starbucks-challenge" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <!-- 5 — Retail Demand Forecasting -->
+        <article class="project-card" data-roles="all ds da">
+          <div class="project-tags">
+            <span class="role-tag ds">Data Science</span>
+            <span class="role-tag da">Data Analyst</span>
+          </div>
+          <h3>Retail Demand Forecasting Pipeline</h3>
+          <p>Developed a machine learning pipeline using LightGBM and Random Forest to forecast SKU-level retail demand. Engineered leakage-safe temporal features, achieving ~18% reduction in demand-weighted forecasting error and improving simulated inventory planning across large SKU catalogs.</p>
+          <div class="tech-tags">
+            <span class="tag">Python</span><span class="tag">LightGBM</span><span class="tag">Random Forest</span><span class="tag">Time Series</span>
+          </div>
+          <a class="btn-github" href="https://github.com/pkatole24/retail-demand-forecasting-pipeline" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <!-- 6 — EV Dashboard -->
+        <article class="project-card" data-roles="all pa pm da">
+          <div class="project-tags">
+            <span class="role-tag pa">Product Analyst</span>
+            <span class="role-tag pm">PM</span>
+            <span class="role-tag da">Data Analyst</span>
+          </div>
+          <h3>EV Demand Momentum Dashboard</h3>
+          <p>Analysed global electric vehicle adoption momentum (2019–2024) to identify high-growth markets. Built an executive-ready Tableau dashboard to support infrastructure investment decisions and market prioritisation strategy for a cross-functional stakeholder audience.</p>
+          <div class="tech-tags">
+            <span class="tag">Tableau</span><span class="tag">Market Analysis</span><span class="tag">Strategy</span><span class="tag">Python</span>
+          </div>
+          <a class="btn-github" href="https://github.com/pkatole24/ev-readiness-dashboard" target="_blank" rel="noopener">View on GitHub ↗</a>
+        </article>
+
+        <p class="no-results" id="no-results">No projects tagged for this role yet — check back soon!</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Skills</h2>
+      <div id="role-skills-banner" class="role-skills-banner" style="display:none">
+        <p id="role-skills-text"></p>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <h3>Languages &amp; Databases</h3>
+          <div class="skill-pills">
+            <span class="skill-pill" data-roles="all ds da pa pm">SQL (PostgreSQL, MySQL)</span>
+            <span class="skill-pill" data-roles="all ds da pa pm">Python</span>
+            <span class="skill-pill" data-roles="all ds da">PySpark</span>
+            <span class="skill-pill" data-roles="all ds da">R</span>
+            <span class="skill-pill" data-roles="all ds da">Snowflake</span>
+            <span class="skill-pill" data-roles="all ds da">GCP (BigQuery, GCE)</span>
+            <span class="skill-pill" data-roles="all ds da">AWS (S3, Redshift)</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Analytics &amp; BI</h3>
+          <div class="skill-pills">
+            <span class="skill-pill" data-roles="all ds da pa pm">A/B Testing</span>
+            <span class="skill-pill" data-roles="all pa pm da">Tableau</span>
+            <span class="skill-pill" data-roles="all da pa">Power BI</span>
+            <span class="skill-pill" data-roles="all ds da pa pm">Causal Inference</span>
+            <span class="skill-pill" data-roles="all ds da">Statistical Modeling</span>
+            <span class="skill-pill" data-roles="all pa pm">Product Metrics</span>
+            <span class="skill-pill" data-roles="all pa pm">User Behavior Analytics</span>
+            <span class="skill-pill" data-roles="all pa pm ds">Data Storytelling</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>ML &amp; Engineering</h3>
+          <div class="skill-pills">
+            <span class="skill-pill" data-roles="all ds da">scikit-learn</span>
+            <span class="skill-pill" data-roles="all ds">XGBoost / LightGBM</span>
+            <span class="skill-pill" data-roles="all ds da">Regression &amp; Classification</span>
+            <span class="skill-pill" data-roles="all ds da pa">Clustering (K-Means)</span>
+            <span class="skill-pill" data-roles="all ds da">ETL / ELT Pipelines</span>
+            <span class="skill-pill" data-roles="all ds da">Apache Airflow</span>
+            <span class="skill-pill" data-roles="all ds pa pm">GenAI / LLM APIs</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3>Tools &amp; Workflow</h3>
+          <div class="skill-pills">
+            <span class="skill-pill" data-roles="all ds da pa pm">Git &amp; GitHub</span>
+            <span class="skill-pill" data-roles="all da pa pm">Excel &amp; Power Query</span>
+            <span class="skill-pill" data-roles="all ds da">Jupyter Notebooks</span>
+            <span class="skill-pill" data-roles="all pa pm">Stakeholder Management</span>
+            <span class="skill-pill" data-roles="all pm pa">Roadmap Planning</span>
+            <span class="skill-pill" data-roles="all ds da">SPSS</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <p class="section-sub">Let's connect and build something great</p>
+      <div class="contact-grid">
+
+        <div class="contact-info card">
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <span>+1 (213) 859-5507</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <a href="mailto:pkatole24@outlook.com">pkatole24@outlook.com</a>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <span>Los Angeles, CA</span>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">🔗</span>
+            <span>
+              <a href="https://www.linkedin.com/in/paarthkatole/" target="_blank" rel="noopener">LinkedIn</a>
+              &nbsp;·&nbsp;
+              <a href="https://github.com/pkatole24" target="_blank" rel="noopener">GitHub</a>
+            </span>
+          </div>
+        </div>
+
+        <form class="card contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+          <div class="form-row">
+            <input name="name" placeholder="Your name" required/>
+            <input name="email" type="email" placeholder="Email" required/>
+          </div>
+          <input name="subject" placeholder="Subject"/>
+          <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+          <button class="btn-primary" type="submit">Send Message ↗</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="yr"></span> Paarth Katole</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/paarthkatole/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/pkatole24" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
