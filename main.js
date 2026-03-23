@@ -1,4 +1,4 @@
-/* main.js — Portfolio interactivity (full) */
+﻿/* main.js - Portfolio interactivity (full) */
 
 /* ── Resume map per role ─────────────────────────── */
 const resumeMap = {
@@ -20,11 +20,11 @@ const roleLabel = {
 
 /* ── Role value blurb (hero sub-tagline) ─────────── */
 const roleBlurb = {
-  all: "I combine research-grade statistical thinking with an engineer's pragmatism — turning raw, messy data into decisions that ship.",
+  all: "I combine research-grade statistical thinking with an engineer's pragmatism - turning raw, messy data into decisions that ship.",
   ds:  "I build end-to-end ML pipelines and experimentation frameworks that turn raw, high-volume data into production-ready models and actionable intelligence.",
-  da:  "I translate complex datasets into clear, executive-ready insights — through SQL, visualisation, and rigorous analysis that drives operational decisions.",
-  pa:  "I bridge data and product — defining metrics, running experiments, and surfacing the behavioural signals that tell teams what to build next.",
-  pm:  "I bring a data-first lens to product strategy — from discovery and metric definition to experiment design and stakeholder-ready storytelling.",
+  da:  "I translate complex datasets into clear, executive-ready insights - through SQL, visualisation, and rigorous analysis that drives operational decisions.",
+  pa:  "I bridge data and product - defining metrics, running experiments, and surfacing the behavioural signals that tell teams what to build next.",
+  pm:  "I bring a data-first lens to product strategy - from discovery and metric definition to experiment design and stakeholder-ready storytelling.",
 };
 
 /* ── Top skills banner copy per role ─────────────── */
