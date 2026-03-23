@@ -7,8 +7,18 @@
   <meta name="description" content="Paarth Katole — MS Business Analytics at UCLA. Data Science, Product Analytics &amp; Operations."/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
+
+<!-- Scroll progress bar -->
+<div id="scroll-bar"></div>
+
+<!-- Tableau Lightbox -->
+<div id="lightbox">
+  <button id="lb-close" aria-label="Close">×</button>
+  <iframe id="lb-frame" src="" allowfullscreen></iframe>
+</div>
 
 <!-- ===== LOADING SCREEN ===== -->
 <div id="loader">
@@ -27,8 +37,10 @@
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="#leadership">Leadership</a>
       <a href="#contact">Contact</a>
     </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
     <a class="btn-resume" id="resume-btn" href="/PaarthKatole_Resume.pdf" target="_blank">Resume ↗</a>
   </div>
   <!-- Role Filter Bar -->
@@ -55,6 +67,7 @@
         <p class="hero-eyebrow">👋 Hello, I'm</p>
         <h1 class="hero-name">Paarth Katole</h1>
         <h2 class="hero-role" id="hero-role">Data Scientist &amp; Product Analyst</h2>
+        <p class="role-blurb" id="role-blurb">I combine research-grade statistical thinking with an engineer's pragmatism — turning raw, messy data into decisions that ship.</p>
         <p class="hero-desc">A results-oriented analyst skilled in stakeholder engagement, data storytelling, and insight generation — translating complex data into measurable business value across functions.</p>
         <p class="hero-desc">Proficient in predictive analytics, forecasting, and data visualization, leveraging statistical models to uncover patterns and guide strategy.</p>
         <p class="hero-edu">🎓 UCLA MS Business Analytics '26 &nbsp;·&nbsp; IIT Bombay B.Tech '24</p>
@@ -222,6 +235,20 @@
     <div class="container">
       <h2 class="section-title">Projects</h2>
       <p class="section-sub">Select a role above to filter relevant work</p>
+
+      <!-- Currently Building -->
+      <div class="building-banner">
+        <div class="building-pulse">⚡</div>
+        <div class="building-body">
+          <p class="building-label">Currently Building</p>
+          <p class="building-title">Identity Risk Copilot — Agentic Login Triage System</p>
+          <p class="building-desc">A local-first AI system that triages suspicious login events using a deterministic risk engine, a LangGraph agentic workflow, and a RAG retrieval layer backed by policy documents and case memory. Analyst-facing Streamlit UI surfaces risk tier, recommended action, and a grounded explanation — all runnable without external credentials.</p>
+          <div class="building-tags">
+            <span class="tag">LangGraph</span><span class="tag">RAG / FAISS</span><span class="tag">Streamlit</span><span class="tag">Python</span><span class="tag">Pydantic</span><span class="tag">GenAI APIs</span>
+          </div>
+        </div>
+      </div>
+
       <div class="projects-grid" id="projects-grid">
 
         <!-- 1 — Sports Analytics -->
@@ -263,7 +290,12 @@
           <div class="tech-tags">
             <span class="tag">GCP</span><span class="tag">Airflow</span><span class="tag">Spark</span><span class="tag">Snowflake</span><span class="tag">Tableau</span>
           </div>
-          <a class="btn-github" href="https://github.com/pkatole24/NFL-FourthDown-DecisionAnalytics" target="_blank" rel="noopener">View on GitHub ↗</a>
+          <div class="project-links">
+            <a class="btn-github" href="https://github.com/pkatole24/NFL-FourthDown-DecisionAnalytics" target="_blank" rel="noopener">View on GitHub ↗</a>
+            <a class="btn-tableau" href="https://public.tableau.com/app/profile/paarth.katole7366/viz/NFL_17729330843170/Dashboard1"
+               data-lightbox="https://public.tableau.com/views/NFL_17729330843170/Dashboard1?:showVizHome=no&:embed=true"
+               target="_blank" rel="noopener">📊 Live Dashboard ↗</a>
+          </div>
         </article>
 
         <!-- 4 — Starbucks LLM -->
@@ -337,7 +369,8 @@
       <div id="role-skills-banner" class="role-skills-banner" style="display:none">
         <p id="role-skills-text"></p>
       </div>
-      <div class="skills-grid">
+      <div class="skills-layout">
+        <div class="skills-grid">
 
         <div class="skill-group">
           <h3>Languages &amp; Databases</h3>
@@ -389,9 +422,13 @@
             <span class="skill-pill" data-roles="all pm pa">Roadmap Planning</span>
             <span class="skill-pill" data-roles="all ds da">SPSS</span>
           </div>
-        </div>
+        </div><!-- /skill-group -->
 
-      </div>
+        </div><!-- /skills-grid -->
+        <div class="radar-wrap">
+          <canvas id="skillRadar" width="320" height="320" aria-label="Skill radar chart"></canvas>
+        </div>
+      </div><!-- /skills-layout -->
     </div>
   </section>
 
@@ -431,7 +468,7 @@
             <input name="email" type="email" placeholder="Email" required/>
           </div>
           <input name="subject" placeholder="Subject"/>
-          <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
+          <textarea id="contact-message" name="message" rows="5" placeholder="Your message..." required></textarea>
           <button class="btn-primary" type="submit">Send Message ↗</button>
         </form>
 
