@@ -225,6 +225,41 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Initialise */
   applyRole('all');
 
+  /* ── Interactive Timeline ─────────────────────── */
+  const tlNodes  = document.querySelectorAll('.tl-node');
+  const tlDetail = document.getElementById('tl-detail');
+  const details  = document.querySelectorAll('.tl-detail-inner');
+
+  function openTimeline(idx) {
+    if (!tlDetail) return;
+    
+    // Update active dot
+    tlNodes.forEach(n => n.classList.toggle('active', n.dataset.idx == idx));
+    
+    // Show corresponding panel and measure height
+    let targetHeight = 0;
+    details.forEach(d => {
+      const isMatch = d.id === `tl-detail-${idx}`;
+      d.classList.toggle('active', isMatch);
+      if (isMatch) targetHeight = d.scrollHeight;
+    });
+
+    // Animate container height
+    tlDetail.style.height = targetHeight + 'px';
+  }
+
+  // Bind clicks
+  tlNodes.forEach(n => {
+    n.querySelector('.tl-dot').addEventListener('click', () => openTimeline(n.dataset.idx));
+    n.querySelector('.tl-dot').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openTimeline(n.dataset.idx); }
+    });
+  });
+
+  // Open the most recent (last) experience by default if it exists
+  if (tlNodes.length > 0) openTimeline(tlNodes.length - 1);
+
+
   /* ── Smooth scroll ────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {

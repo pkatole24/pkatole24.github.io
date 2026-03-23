@@ -149,84 +149,132 @@
   <section id="experience">
     <div class="container">
       <h2 class="section-title">Experience</h2>
-      <p class="section-sub">Internships &amp; professional roles</p>
-      <div class="exp-list">
+      <p class="section-sub">Click any role to expand details</p>
 
-        <div class="exp-card">
-          <div class="exp-header">
-            <div>
-              <h3>EY-Parthenon</h3>
-              <p class="exp-role">Business Consulting Intern &nbsp;·&nbsp; Mumbai</p>
+      <!-- Timeline graph -->
+      <div class="tl-wrap">
+
+        <!-- SVG line + dots -->
+        <div class="tl-graph" aria-label="Experience timeline">
+          <div class="tl-line"></div>
+
+          <!-- IMH — Jun 2022, left=0% -->
+          <div class="tl-node" style="left:0%" data-idx="0">
+            <div class="tl-dot" tabindex="0" role="button" aria-expanded="false"></div>
+            <div class="tl-label">
+              <span class="tl-company">IMH</span>
+              <span class="tl-date-label">Jun 2022</span>
             </div>
-            <span class="exp-date">Feb – Mar 2025</span>
           </div>
-          <ul class="exp-bullets">
-            <li>Researched healthcare markets across 3 districts and 5M+ residents, identifying critical gaps in specialist care availability and prioritizing expansion areas to guide data-backed investment planning.</li>
-            <li>Benchmarked 15+ competitors, evaluating key differentiators and proposing positioning strategies that strengthened client competitiveness in a $300M+ regional market.</li>
-          </ul>
-          <div class="exp-tags">
-            <span class="tag">Market Research</span><span class="tag">SQL</span>
-            <span class="tag">Competitive Analysis</span><span class="tag">Healthcare</span>
+
+          <!-- Putzmeister — May 2023, left=33% -->
+          <div class="tl-node" style="left:33%" data-idx="1">
+            <div class="tl-dot" tabindex="0" role="button" aria-expanded="false"></div>
+            <div class="tl-label">
+              <span class="tl-company">Putzmeister</span>
+              <span class="tl-date-label">May 2023</span>
+            </div>
+          </div>
+
+          <!-- Sohar University — Apr 2024, left=63% -->
+          <div class="tl-node" style="left:63%" data-idx="2">
+            <div class="tl-dot" tabindex="0" role="button" aria-expanded="false"></div>
+            <div class="tl-label">
+              <span class="tl-company">Sohar Univ.</span>
+              <span class="tl-date-label">Apr 2024</span>
+            </div>
+          </div>
+
+          <!-- EY-Parthenon — Feb 2025, left=100% -->
+          <div class="tl-node" style="left:100%" data-idx="3">
+            <div class="tl-dot" tabindex="0" role="button" aria-expanded="false"></div>
+            <div class="tl-label">
+              <span class="tl-company">EY-Parthenon</span>
+              <span class="tl-date-label">Feb 2025</span>
+            </div>
           </div>
         </div>
 
-        <div class="exp-card">
-          <div class="exp-header">
-            <div>
-              <h3>Sohar University</h3>
-              <p class="exp-role">Data Scientist Intern &nbsp;·&nbsp; WEEE Project &nbsp;·&nbsp; Oman</p>
-            </div>
-            <span class="exp-date">Apr – Jul 2024</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Transformed 1,000+ manually collected WEEE dismantling records into structured SQL datasets, enabling reliable feature engineering and downstream performance analysis.</li>
-            <li>Engineered and validated predictive regression models to estimate task completion time from multi-dimensional features, improving forecast accuracy by 25%.</li>
-            <li>Applied residual and variance diagnostics in Python to identify operational bottlenecks, informing workflow redesign and standardised material sorting processes.</li>
-          </ul>
-          <div class="exp-tags">
-            <span class="tag">Regression</span><span class="tag">SQL</span>
-            <span class="tag">Python</span><span class="tag">Forecasting</span>
-          </div>
-        </div>
+        <!-- Detail panel (hidden until a dot is clicked) -->
+        <div class="tl-detail" id="tl-detail" aria-live="polite">
 
-        <div class="exp-card">
-          <div class="exp-header">
-            <div>
-              <h3>Putzmeister Concrete Machines</h3>
-              <p class="exp-role">Operations Analyst Intern &nbsp;·&nbsp; Goa</p>
+          <div class="tl-detail-inner" id="tl-detail-0">
+            <div class="tl-detail-header">
+              <div>
+                <h3>IMH &nbsp;-&nbsp; IIT Bombay Startup</h3>
+                <p class="exp-role">Project Lead &nbsp;·&nbsp; Mumbai</p>
+              </div>
+              <span class="exp-date">Jun – Oct 2022</span>
             </div>
-            <span class="exp-date">May – Jul 2023</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Re-engineered SQL pipelines processing high-frequency IoT telemetry and deployed automated KPI dashboards (uptime %, temperature thresholds), enabling real-time anomaly detection and faster operational response.</li>
-            <li>Developed and deployed predictive maintenance models on streaming IoT data; collaborated cross-functionally with engineering teams to deploy model-driven risk alerts that reduced unplanned downtime by 40%.</li>
-            <li>Performed root-cause analysis using control charts and Pareto diagnostics in Python, uncovering process bottlenecks and driving fixes that increased assembly throughput by 20%.</li>
-          </ul>
-          <div class="exp-tags">
-            <span class="tag">SQL</span><span class="tag">Power BI</span>
-            <span class="tag">Predictive Maintenance</span><span class="tag">IoT</span><span class="tag">ML</span><span class="tag">Python</span>
-          </div>
-        </div>
-
-        <div class="exp-card">
-          <div class="exp-header">
-            <div>
-              <h3>IMH &nbsp; - &nbsp; IIT Bombay Startup</h3>
-              <p class="exp-role">Project Lead &nbsp;·&nbsp; Mumbai</p>
+            <ul class="exp-bullets">
+              <li>Designed and deployed an ML-based ranking tool using supervised learning on large-scale performance data; iterated feature selection to optimize prediction accuracy.</li>
+              <li>Drove engagement and adoption by 500K+ users through data-driven product decisions; used SPSS surveys to inform model refinements and stabilize user retention.</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="tag">ML</span><span class="tag">Python</span>
+              <span class="tag">Product Analytics</span><span class="tag">SPSS</span>
             </div>
-            <span class="exp-date">Jun – Oct 2022</span>
           </div>
-          <ul class="exp-bullets">
-            <li>Designed and deployed an ML-based ranking tool using supervised learning on large-scale performance data; iterated feature selection to optimize prediction accuracy.</li>
-            <li>Drove engagement and adoption by 500K+ users through data-driven product decisions; used SPSS surveys to inform model refinements and stabilize user retention.</li>
-          </ul>
-          <div class="exp-tags">
-            <span class="tag">ML</span><span class="tag">Python</span>
-            <span class="tag">Product Analytics</span><span class="tag">SPSS</span>
-          </div>
-        </div>
 
-      </div>
+          <div class="tl-detail-inner" id="tl-detail-1">
+            <div class="tl-detail-header">
+              <div>
+                <h3>Putzmeister Concrete Machines</h3>
+                <p class="exp-role">Operations Analyst Intern &nbsp;·&nbsp; Goa</p>
+              </div>
+              <span class="exp-date">May – Jul 2023</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Re-engineered SQL pipelines processing high-frequency IoT telemetry and deployed automated KPI dashboards (uptime %, temperature thresholds), enabling real-time anomaly detection and faster operational response.</li>
+              <li>Developed and deployed predictive maintenance models on streaming IoT data; collaborated cross-functionally with engineering teams to reduce unplanned downtime by 40%.</li>
+              <li>Performed root-cause analysis using control charts and Pareto diagnostics in Python, uncovering process bottlenecks and driving fixes that increased assembly throughput by 20%.</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="tag">SQL</span><span class="tag">Power BI</span>
+              <span class="tag">Predictive Maintenance</span><span class="tag">IoT</span><span class="tag">ML</span><span class="tag">Python</span>
+            </div>
+          </div>
+
+          <div class="tl-detail-inner" id="tl-detail-2">
+            <div class="tl-detail-header">
+              <div>
+                <h3>Sohar University</h3>
+                <p class="exp-role">Data Scientist Intern &nbsp;·&nbsp; WEEE Project &nbsp;·&nbsp; Oman</p>
+              </div>
+              <span class="exp-date">Apr – Jul 2024</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Transformed 1,000+ manually collected WEEE dismantling records into structured SQL datasets, enabling reliable feature engineering and downstream performance analysis.</li>
+              <li>Engineered and validated predictive regression models to estimate task completion time from multi-dimensional features, improving forecast accuracy by 25%.</li>
+              <li>Applied residual and variance diagnostics in Python to identify operational bottlenecks, informing workflow redesign and standardised material sorting processes.</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="tag">Regression</span><span class="tag">SQL</span>
+              <span class="tag">Python</span><span class="tag">Forecasting</span>
+            </div>
+          </div>
+
+          <div class="tl-detail-inner" id="tl-detail-3">
+            <div class="tl-detail-header">
+              <div>
+                <h3>EY-Parthenon</h3>
+                <p class="exp-role">Business Consulting Intern &nbsp;·&nbsp; Mumbai</p>
+              </div>
+              <span class="exp-date">Feb – Mar 2025</span>
+            </div>
+            <ul class="exp-bullets">
+              <li>Researched healthcare markets across 3 districts and 5M+ residents, identifying critical gaps in specialist care availability and prioritizing expansion areas to guide data-backed investment planning.</li>
+              <li>Benchmarked 15+ competitors, evaluating key differentiators and proposing positioning strategies that strengthened client competitiveness in a $300M+ regional market.</li>
+            </ul>
+            <div class="exp-tags">
+              <span class="tag">Market Research</span><span class="tag">SQL</span>
+              <span class="tag">Competitive Analysis</span><span class="tag">Healthcare</span>
+            </div>
+          </div>
+
+        </div><!-- /tl-detail -->
+      </div><!-- /tl-wrap -->
+
     </div>
   </section>
 

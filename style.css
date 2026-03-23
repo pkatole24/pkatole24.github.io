@@ -214,17 +214,48 @@ section { padding: 72px 0; }
 /* ── TAGS ─────────────────────────────────────────── */
 .tag { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 999px; background: var(--surface2); border: 1px solid var(--border); color: var(--muted); white-space: nowrap; }
 
-/* ── EXPERIENCE ───────────────────────────────────── */
-.exp-list { display: flex; flex-direction: column; gap: 16px; }
-.exp-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px 28px; transition: border-color var(--t), transform var(--t); }
-.exp-card:hover { border-color: rgba(124,111,255,.4); transform: translateY(-2px); }
-.exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 12px; }
-.exp-header h3 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 3px; }
+/* ── EXPERIENCE TIMELINE ────────────────────────── */
+.tl-wrap { margin-top: 40px; }
+.tl-graph { position: relative; height: 80px; margin: 0 40px 40px; }
+.tl-line { position: absolute; top: 20px; left: 0; right: 0; height: 2px; background: var(--border); border-radius: 2px; }
+.tl-node { position: absolute; top: 20px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; }
+.tl-dot {
+  width: 16px; height: 16px; border-radius: 50%; background: var(--surface2); border: 2px solid var(--border);
+  transform: translateY(-50%); cursor: pointer; transition: all 0.2s ease;
+  box-shadow: 0 0 0 4px var(--bg);
+}
+.tl-dot:hover, .tl-node.active .tl-dot {
+  background: var(--accent); border-color: var(--accent); transform: translateY(-50%) scale(1.25);
+  box-shadow: 0 0 0 6px rgba(124,111,255,0.15);
+}
+.tl-label { margin-top: 12px; text-align: center; display: flex; flex-direction: column; gap: 4px; pointer-events: none; }
+.tl-company { font-size: 13px; font-weight: 600; color: var(--text); white-space: nowrap; transition: color 0.2s ease; }
+.tl-node.active .tl-company { color: var(--accent); }
+.tl-date-label { font-size: 11px; color: var(--muted); }
+
+.tl-detail { position: relative; overflow: hidden; transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1); height: 0; }
+.tl-detail-inner {
+  position: absolute; top: 0; left: 0; right: 0; padding: 24px 28px;
+  background: var(--surface); border: 1px solid rgba(124,111,255,0.3); border-radius: var(--radius-lg);
+  opacity: 0; visibility: hidden; transform: translateY(10px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tl-detail-inner.active { opacity: 1; visibility: visible; transform: translateY(0); position: relative; }
+
+.tl-detail-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 16px; }
+.tl-detail-header h3 { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
 .exp-role { font-size: 13px; color: var(--accent); font-weight: 500; }
-.exp-date { font-size: 12px; color: var(--muted); white-space: nowrap; background: var(--surface2); border: 1px solid var(--border); padding: 4px 10px; border-radius: 6px; }
-.exp-bullets { list-style: disc; padding-left: 18px; margin-bottom: 14px; }
-.exp-bullets li { font-size: 14px; color: var(--muted); margin-bottom: 6px; line-height: 1.6; }
+.exp-date { font-size: 12px; color: var(--muted); white-space: nowrap; background: var(--surface2); border: 1px solid var(--border); padding: 4px 10px; border-radius: 6px; flex-shrink: 0; }
+.exp-bullets { list-style: none; padding: 0; margin: 0 0 16px 0; display: flex; flex-direction: column; gap: 10px; }
+.exp-bullets li { font-size: 14px; color: var(--muted); line-height: 1.6; position: relative; padding-left: 20px; }
+.exp-bullets li::before { content: "›"; position: absolute; left: 0; color: var(--accent); font-weight: bold; font-size: 16px; line-height: 1.4; }
 .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+
+@media (max-width: 600px) {
+  .tl-graph { margin: 0 20px 40px; }
+  .tl-label { transform: rotate(-45deg) translateX(-10px) translateY(10px); align-items: flex-end; }
+  .tl-detail-header { flex-direction: column; gap: 8px; }
+}
 
 /* ── PROJECTS ─────────────────────────────────────── */
 .projects-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
