@@ -46,13 +46,11 @@
   <!-- Role Filter Bar -->
   <div class="role-bar">
     <div class="container role-bar-inner">
-      <span class="role-label">View as:</span>
+      <span class="role-label">Tailored for:</span>
       <div class="role-pills" role="group" aria-label="Role filter">
         <button class="role-pill active" data-role="all">All</button>
-        <button class="role-pill" data-role="ds">Data Science</button>
-        <button class="role-pill" data-role="da">Data Analyst</button>
-        <button class="role-pill" data-role="pa">Product Analyst</button>
-        <button class="role-pill" data-role="pm">Product Manager</button>
+        <button class="role-pill" data-role="data">Data Science / Data Analyst</button>
+        <button class="role-pill" data-role="analytics">Product Manager / Product Analyst</button>
       </div>
     </div>
   </div>
@@ -282,7 +280,7 @@
   <section id="projects">
     <div class="container">
       <h2 class="section-title">Projects</h2>
-      <p class="section-sub">Select a role above to filter relevant work</p>
+      <p class="section-sub">Switch a lens above — all projects shown, ordered by relevance</p>
 
       <!-- Currently Building -->
       <div class="building-banner">
@@ -300,7 +298,7 @@
       <div class="projects-grid" id="projects-grid">
 
         <!-- 1 - Sports Analytics -->
-        <article class="project-card" data-roles="all ds">
+        <article class="project-card" data-original-order="1" data-order-data="3" data-order-analytics="3">
           <div class="project-tags">
             <span class="role-tag ds">Data Science</span>
           </div>
@@ -313,7 +311,7 @@
         </article>
 
         <!-- 2 - Customer Segmentation -->
-        <article class="project-card" data-roles="all ds da pa">
+        <article class="project-card" data-original-order="2" data-order-data="4" data-order-analytics="7">
           <div class="project-tags">
             <span class="role-tag ds">Data Science</span>
             <span class="role-tag da">Data Analyst</span>
@@ -328,7 +326,7 @@
         </article>
 
         <!-- 3 - NFL ETL -->
-        <article class="project-card" data-roles="all ds da">
+        <article class="project-card" data-original-order="3" data-order-data="1" data-order-analytics="1">
           <div class="project-tags">
             <span class="role-tag ds">Data Science</span>
             <span class="role-tag da">Data Analyst</span>
@@ -347,7 +345,7 @@
         </article>
 
         <!-- 4 - Starbucks LLM -->
-        <article class="project-card" data-roles="all pa pm ds">
+        <article class="project-card" data-original-order="4" data-order-data="5" data-order-analytics="5">
           <div class="project-tags">
             <span class="role-tag pa">Product Analyst</span>
             <span class="role-tag pm">PM</span>
@@ -362,7 +360,7 @@
         </article>
 
         <!-- 5 - Retail Demand Forecasting -->
-        <article class="project-card" data-roles="all ds da">
+        <article class="project-card" data-original-order="5" data-order-data="2" data-order-analytics="2">
           <div class="project-tags">
             <span class="role-tag ds">Data Science</span>
             <span class="role-tag da">Data Analyst</span>
@@ -376,7 +374,7 @@
         </article>
 
         <!-- 6 - EV Dashboard -->
-        <article class="project-card" data-roles="all pa pm da">
+        <article class="project-card" data-original-order="6" data-order-data="6" data-order-analytics="6">
           <div class="project-tags">
             <span class="role-tag pa">Product Analyst</span>
             <span class="role-tag pm">PM</span>
@@ -391,7 +389,7 @@
         </article>
 
         <!-- 7 - Libby App Design Sprint -->
-        <article class="project-card" data-roles="all pa pm">
+        <article class="project-card" data-original-order="7" data-order-data="7" data-order-analytics="4">
           <div class="project-tags">
             <span class="role-tag pa">Product Analyst</span>
             <span class="role-tag pm">PM</span>
@@ -423,52 +421,52 @@
         <div class="skill-group">
           <h3>Languages &amp; Databases</h3>
           <div class="skill-pills">
-            <span class="skill-pill" data-roles="all ds da pa pm">SQL (PostgreSQL, MySQL)</span>
-            <span class="skill-pill" data-roles="all ds da pa pm">Python</span>
-            <span class="skill-pill" data-roles="all ds da">PySpark</span>
-            <span class="skill-pill" data-roles="all ds da">R</span>
-            <span class="skill-pill" data-roles="all ds da">Snowflake</span>
-            <span class="skill-pill" data-roles="all ds da">GCP (BigQuery, GCE)</span>
-            <span class="skill-pill" data-roles="all ds da">AWS (S3, Redshift)</span>
+            <span class="skill-pill" data-roles="all data analytics">SQL (PostgreSQL, MySQL)</span>
+            <span class="skill-pill" data-roles="all data analytics">Python</span>
+            <span class="skill-pill" data-roles="all data">PySpark</span>
+            <span class="skill-pill" data-roles="all data">R</span>
+            <span class="skill-pill" data-roles="all data">Snowflake</span>
+            <span class="skill-pill" data-roles="all data">GCP (BigQuery, GCE)</span>
+            <span class="skill-pill" data-roles="all data">AWS (S3, Redshift)</span>
           </div>
         </div>
 
         <div class="skill-group">
           <h3>Analytics &amp; BI</h3>
           <div class="skill-pills">
-            <span class="skill-pill" data-roles="all ds da pa pm">A/B Testing</span>
-            <span class="skill-pill" data-roles="all pa pm da">Tableau</span>
-            <span class="skill-pill" data-roles="all da pa">Power BI</span>
-            <span class="skill-pill" data-roles="all ds da pa pm">Causal Inference</span>
-            <span class="skill-pill" data-roles="all ds da">Statistical Modeling</span>
-            <span class="skill-pill" data-roles="all pa pm">Product Metrics</span>
-            <span class="skill-pill" data-roles="all pa pm">User Behavior Analytics</span>
-            <span class="skill-pill" data-roles="all pa pm ds">Data Storytelling</span>
+            <span class="skill-pill" data-roles="all data analytics">A/B Testing</span>
+            <span class="skill-pill" data-roles="all data analytics">Tableau</span>
+            <span class="skill-pill" data-roles="all data analytics">Power BI</span>
+            <span class="skill-pill" data-roles="all data analytics">Causal Inference</span>
+            <span class="skill-pill" data-roles="all data">Statistical Modeling</span>
+            <span class="skill-pill" data-roles="all analytics">Product Metrics</span>
+            <span class="skill-pill" data-roles="all analytics">User Behavior Analytics</span>
+            <span class="skill-pill" data-roles="all data analytics">Data Storytelling</span>
           </div>
         </div>
 
         <div class="skill-group">
           <h3>ML &amp; Engineering</h3>
           <div class="skill-pills">
-            <span class="skill-pill" data-roles="all ds da">scikit-learn</span>
-            <span class="skill-pill" data-roles="all ds">XGBoost / LightGBM</span>
-            <span class="skill-pill" data-roles="all ds da">Regression &amp; Classification</span>
-            <span class="skill-pill" data-roles="all ds da pa">Clustering (K-Means)</span>
-            <span class="skill-pill" data-roles="all ds da">ETL / ELT Pipelines</span>
-            <span class="skill-pill" data-roles="all ds da">Apache Airflow</span>
-            <span class="skill-pill" data-roles="all ds pa pm">GenAI / LLM APIs</span>
+            <span class="skill-pill" data-roles="all data">scikit-learn</span>
+            <span class="skill-pill" data-roles="all data">XGBoost / LightGBM</span>
+            <span class="skill-pill" data-roles="all data">Regression &amp; Classification</span>
+            <span class="skill-pill" data-roles="all data analytics">Clustering (K-Means)</span>
+            <span class="skill-pill" data-roles="all data">ETL / ELT Pipelines</span>
+            <span class="skill-pill" data-roles="all data">Apache Airflow</span>
+            <span class="skill-pill" data-roles="all data analytics">GenAI / LLM APIs</span>
           </div>
         </div>
 
         <div class="skill-group">
           <h3>Tools &amp; Workflow</h3>
           <div class="skill-pills">
-            <span class="skill-pill" data-roles="all ds da pa pm">Git &amp; GitHub</span>
-            <span class="skill-pill" data-roles="all da pa pm">Excel &amp; Power Query</span>
-            <span class="skill-pill" data-roles="all ds da">Jupyter Notebooks</span>
-            <span class="skill-pill" data-roles="all pa pm">Stakeholder Management</span>
-            <span class="skill-pill" data-roles="all pm pa">Roadmap Planning</span>
-            <span class="skill-pill" data-roles="all ds da">SPSS</span>
+            <span class="skill-pill" data-roles="all data analytics">Git &amp; GitHub</span>
+            <span class="skill-pill" data-roles="all data analytics">Excel &amp; Power Query</span>
+            <span class="skill-pill" data-roles="all data">Jupyter Notebooks</span>
+            <span class="skill-pill" data-roles="all analytics">Stakeholder Management</span>
+            <span class="skill-pill" data-roles="all analytics">Roadmap Planning</span>
+            <span class="skill-pill" data-roles="all data">SPSS</span>
           </div>
         </div><!-- /skill-group -->
 

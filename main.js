@@ -1,59 +1,47 @@
 /* main.js - Portfolio interactivity (full) */
 
-/* ── Resume map per role ─────────────────────────── */
+/* ── Resume map per lens ─────────────────────────── */
 const resumeMap = {
-  all: '/PaarthKatole_Resume.pdf',
-  ds:  '/PaarthKatole_Resume.pdf',
-  da:  '/PaarthKatole_Resume DA.pdf',
-  pa:  '/PaarthKatole_Resume Product.pdf',
-  pm:  '/PaarthKatole_Resume Product.pdf',
+  all:       '/PaarthKatole_Resume.pdf',
+  data:      '/PaarthKatole_Resume.pdf',
+  analytics: '/PaarthKatole_Resume Product.pdf',
 };
 
-/* ── Hero role label per selection ──────────────── */
+/* ── Hero role label per lens ───────────────────── */
 const roleLabel = {
-  all: 'Data Scientist & Product Analyst',
-  ds:  'Data Scientist',
-  da:  'Data Analyst',
-  pa:  'Product Analyst',
-  pm:  'Product Manager',
+  all:       'Data Scientist & Product Analyst',
+  data:      'Data Scientist & Data Analyst',
+  analytics: 'Product Manager & Product Analyst',
 };
 
-/* ── Role value blurb (hero sub-tagline) ─────────── */
+/* ── Hero sub-tagline per lens ───────────────────── */
 const roleBlurb = {
-  all: "I combine research-grade statistical thinking with an engineer's pragmatism - turning raw, messy data into decisions that ship.",
-  ds:  "I build end-to-end ML pipelines and experimentation frameworks that turn raw, high-volume data into production-ready models and actionable intelligence.",
-  da:  "I translate complex datasets into clear, executive-ready insights - through SQL, visualisation, and rigorous analysis that drives operational decisions.",
-  pa:  "I bridge data and product - defining metrics, running experiments, and surfacing the behavioural signals that tell teams what to build next.",
-  pm:  "I bring a data-first lens to product strategy - from discovery and metric definition to experiment design and stakeholder-ready storytelling.",
+  all:       "I combine research-grade statistical thinking with an engineer's pragmatism - turning raw, messy data into decisions that ship.",
+  data:      "I build end-to-end ML pipelines and rigorous analytical frameworks that turn raw, high-volume data into production-ready models and executive-ready insights.",
+  analytics: "I bridge data and product - defining metrics, running experiments, and surfacing the behavioural signals that tell teams what to build next.",
 };
 
-/* ── Top skills banner copy per role ─────────────── */
+/* ── Top skills banner copy per lens ─────────────── */
 const topSkillsCopy = {
-  all: null,
-  ds:  '⭐ Top skills for Data Science: Python · scikit-learn · SQL · Statistical Modeling · A/B Testing · ETL Pipelines · LangGraph',
-  da:  '⭐ Top skills for Data Analyst: SQL · Tableau · Power BI · Snowflake · Python · ETL / ELT Pipelines · Excel',
-  pa:  '⭐ Top skills for Product Analyst: SQL · Tableau · A/B Testing · Causal Inference · Product Metrics · Data Storytelling',
-  pm:  '⭐ Top skills for PM: Product Strategy · Stakeholder Management · A/B Testing · Roadmap Planning · Product Metrics · Data Storytelling',
+  all:       null,
+  data:      '⭐ Top skills for Data Science / Data Analyst: Python · SQL · scikit-learn · Statistical Modeling · A/B Testing · ETL Pipelines · Snowflake',
+  analytics: '⭐ Top skills for PM / Product Analyst: SQL · Tableau · A/B Testing · Causal Inference · Product Metrics · Data Storytelling · Stakeholder Management',
 };
 
-/* ── Contact form placeholder per role ───────────── */
+/* ── Contact form placeholder per lens ───────────── */
 const contactHint = {
-  all: 'Your message…',
-  ds:  'Tell me about the Data Science role or project…',
-  da:  'Tell me about the Data Analyst opportunity…',
-  pa:  'Tell me about the Product Analyst role…',
-  pm:  'Tell me about the PM position or what you\'re building…',
+  all:       'Your message…',
+  data:      'Tell me about the Data Science or Data Analyst role…',
+  analytics: 'Tell me about the PM or Product Analyst opportunity…',
 };
 
-/* ── Radar chart data per role ───────────────────── */
+/* ── Radar chart data per lens ───────────────────── */
 const radarData = {
   labels: ['ML / AI', 'SQL & Data Eng', 'Visualisation', 'Experimentation', 'Product Thinking', 'Communication'],
   datasets: {
-    all: [85, 80, 72, 78, 70, 80],
-    ds:  [95, 80, 65, 82, 60, 72],
-    da:  [65, 92, 88, 80, 65, 82],
-    pa:  [60, 82, 90, 88, 85, 88],
-    pm:  [50, 65, 78, 85, 95, 92],
+    all:       [85, 80, 72, 78, 70, 80],
+    data:      [88, 88, 72, 82, 62, 75],
+    analytics: [58, 78, 87, 88, 92, 90],
   }
 };
 
@@ -157,10 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ── Role switching ───────────────────────────── */
+  /* ── Lens switching ──────────────────────────── */
   let currentRole = 'all';
   const pills      = document.querySelectorAll('.role-pill');
-  const projects   = document.querySelectorAll('.project-card');
   const skillPills = document.querySelectorAll('.skill-pill');
   const banner     = document.getElementById('role-skills-banner');
   const bannerText = document.getElementById('role-skills-text');
@@ -168,7 +155,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const roleBlurbEl= document.getElementById('role-blurb');
   const resumeBtn  = document.getElementById('resume-btn');
   const resumeCta  = document.getElementById('resume-cta');
-  const noResults  = document.getElementById('no-results');
   const msgTA      = document.getElementById('contact-message');
 
   function applyRole(role) {
@@ -177,15 +163,26 @@ document.addEventListener('DOMContentLoaded', () => {
     /* pills */
     pills.forEach(p => p.classList.toggle('active', p.dataset.role === role));
 
-    /* filter projects */
-    let visible = 0;
-    projects.forEach(card => {
-      const roles = card.dataset.roles.split(' ');
-      const show  = role === 'all' || roles.includes(role);
-      card.classList.toggle('hidden', !show);
-      if (show) visible++;
-    });
-    if (noResults) noResults.classList.toggle('visible', visible === 0);
+    /* reorder projects by lens — all cards always visible */
+    const grid = document.getElementById('projects-grid');
+    if (grid) {
+      const cards = [...grid.querySelectorAll('.project-card')];
+      cards.sort((a, b) => {
+        let aVal, bVal;
+        if (role === 'data') {
+          aVal = parseInt(a.dataset.orderData);
+          bVal = parseInt(b.dataset.orderData);
+        } else if (role === 'analytics') {
+          aVal = parseInt(a.dataset.orderAnalytics);
+          bVal = parseInt(b.dataset.orderAnalytics);
+        } else {
+          aVal = parseInt(a.dataset.originalOrder);
+          bVal = parseInt(b.dataset.originalOrder);
+        }
+        return aVal - bVal;
+      });
+      cards.forEach(card => grid.appendChild(card));
+    }
 
     /* highlight skills */
     skillPills.forEach(pill => {
