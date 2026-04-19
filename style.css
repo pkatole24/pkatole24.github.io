@@ -366,6 +366,39 @@ section { padding: 72px 0; }
   color: var(--muted); white-space: nowrap;
 }
 
+/* ── EXPERIENCE IMPACT GRID ─────────────────────── */
+.impact-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  margin-bottom: 56px;
+}
+.impact-card {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px 20px 28px;
+  position: relative; overflow: hidden;
+  transition: transform var(--t), box-shadow var(--t), border-color var(--t);
+  display: flex; flex-direction: column; gap: 8px;
+}
+.impact-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.1);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+.impact-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; height: 3px; width: 60%;
+  background: var(--c); border-radius: 0 4px 0 0;
+  transition: width var(--t);
+}
+.impact-card:hover::after { width: 100%; }
+.impact-card strong {
+  display: block; font-size: 32px; font-weight: 800; line-height: 1; color: var(--c);
+  font-family: 'JetBrains Mono', monospace; letter-spacing: -1px;
+}
+.impact-card span {
+  font-size: 13px; color: var(--muted); line-height: 1.5; font-weight: 500;
+}
+
 /* ── EXPERIENCE TIMELINE ────────────────────────── */
 .tl-wrap { margin-top: 40px; }
 .tl-graph { position: relative; height: 80px; margin: 0 40px 40px; }
@@ -622,6 +655,7 @@ body.light .project-card,
 body.light .card,
 body.light .tl-detail-inner,
 body.light .skill-group,
+body.light .impact-card,
 body.light .contact-form input,
 body.light .contact-form textarea {
   background: #ffffff;
@@ -755,6 +789,7 @@ body.light .tl-node.active .tl-dot {
   .building-banner { flex-direction: column; }
 }
 @media (max-width: 1024px) {
+  .impact-grid { grid-template-columns: repeat(2, 1fr); }
   .skills-grid { grid-template-columns: repeat(2,1fr); }
   .projects-grid { grid-template-columns: repeat(2,1fr); }
 }
@@ -768,6 +803,7 @@ body.light .tl-node.active .tl-dot {
   .nav { display: none; }
 }
 @media (max-width: 600px) {
+  .impact-grid { grid-template-columns: 1fr; }
   .projects-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .hero-stats { flex-wrap: wrap; justify-content: center; }

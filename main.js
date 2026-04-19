@@ -223,13 +223,18 @@ document.addEventListener('DOMContentLoaded', () => {
   function openTimeline(idx) {
     if (!tlDetail) return;
     
+    // Check if clicked node is already active to support toggling
+    const targetNode = Array.from(tlNodes).find(n => n.dataset.idx == idx);
+    const isAlreadyActive = targetNode && targetNode.classList.contains('active');
+    const targetIdx = isAlreadyActive ? -1 : idx;
+
     // Update active dot
-    tlNodes.forEach(n => n.classList.toggle('active', n.dataset.idx == idx));
+    tlNodes.forEach(n => n.classList.toggle('active', n.dataset.idx == targetIdx));
     
     // Show corresponding panel and measure height
     let targetHeight = 0;
     details.forEach(d => {
-      const isMatch = d.id === `tl-detail-${idx}`;
+      const isMatch = d.id === `tl-detail-${targetIdx}`;
       d.classList.toggle('active', isMatch);
       if (isMatch) targetHeight = d.scrollHeight;
     });
