@@ -279,3 +279,61 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+/* ── DARK MATTER ADDITIONS ────────────────────────── */
+
+/* ① Stat counter — count up hero numbers on load (Mission Control) */
+window.addEventListener('load', () => {
+  const stats = document.querySelectorAll('.stat strong');
+  stats.forEach(el => {
+    const raw    = el.textContent.trim();           // e.g. "10+", "4", "3.95"
+    const suffix = raw.replace(/[\d.]/g, '');       // "+", "", ""
+    const target = parseFloat(raw);
+    if (isNaN(target)) return;
+    const isFloat   = raw.includes('.');
+    const duration  = 1400; // ms
+    const start     = performance.now();
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = isFloat
+        ? (eased * target).toFixed(2)
+        : Math.floor(eased * target);
+      el.textContent = current + suffix;
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  });
+});
+
+/* ② Magnetic card hover — subtle 3D tilt toward cursor (Stellar) */
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('projects-grid');
+  if (!grid) return;
+
+  grid.addEventListener('mousemove', (e) => {
+    const cards = grid.querySelectorAll('.project-card');
+    cards.forEach(card => {
+      const rect   = card.getBoundingClientRect();
+      const cx     = rect.left + rect.width  / 2;
+      const cy     = rect.top  + rect.height / 2;
+      const dx     = e.clientX - cx;
+      const dy     = e.clientY - cy;
+      // Only apply tilt if cursor is within the card
+      if (Math.abs(dx) < rect.width / 2 + 20 && Math.abs(dy) < rect.height / 2 + 20) {
+        const rotateX = -(dy / rect.height) * 5;   // max 5°
+        const rotateY =  (dx / rect.width)  * 5;
+        card.style.transform = `translateY(-4px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        card.style.transition = 'transform 0.1s ease, border-color 0.25s ease, box-shadow 0.25s ease';
+      }
+    });
+  });
+
+  grid.addEventListener('mouseleave', () => {
+    grid.querySelectorAll('.project-card').forEach(card => {
+      card.style.transform = '';
+      card.style.transition = '';
+    });
+  });
+});

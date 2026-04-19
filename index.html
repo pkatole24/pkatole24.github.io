@@ -5,11 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Paarth Katole · Portfolio</title>
   <meta name="description" content="Paarth Katole - MS Business Analytics at UCLA. Data Science, Product Analytics &amp; Operations."/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="style.css?v=2"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css?v=3"/>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
+
+<!-- Aurora blobs (Stellar) -->
+<div class="aurora-wrap" aria-hidden="true">
+  <div class="aurora-blob aurora-blob-1"></div>
+  <div class="aurora-blob aurora-blob-2"></div>
+</div>
 
 <!-- Scroll progress bar -->
 <div id="scroll-bar"></div>
@@ -63,7 +69,7 @@
     <div class="container hero-grid">
       <div class="hero-bio">
         <p class="hero-eyebrow">👋 Hello, I'm</p>
-        <h1 class="hero-name">Paarth Katole</h1>
+        <h1 class="hero-name"><span class="name-light">Paarth </span><span class="name-bold">Katole</span></h1>
         <h2 class="hero-role" id="hero-role">Data Scientist &amp; Product Analyst</h2>
         <p class="role-blurb" id="role-blurb">I combine research-grade statistical thinking with an engineer's pragmatism - turning raw, messy data into decisions that ship.</p>
         <p class="hero-desc">A results-oriented analyst skilled in stakeholder engagement, data storytelling, and insight generation - translating complex data into measurable business value across functions.</p>
@@ -76,6 +82,7 @@
       </div>
       <div class="hero-right">
         <div class="avatar-wrap">
+          <div class="avatar-ring" aria-hidden="true"></div>
           <img class="avatar avatar-photo" src="paarth.png" alt="Paarth Katole"/>
           <div class="avatar-badge">Open to Work</div>
         </div>
@@ -305,6 +312,7 @@
 
         <!-- 1 - IPL Dashboard -->
         <article class="project-card" data-original-order="1" data-order-data="3" data-order-analytics="5">
+          <span class="project-status-dot live" title="Live App" aria-label="Live App"></span>
           <h3>Sports Analytics - IPL 2026 Batter Comparison App</h3>
           <p>Built a live Streamlit dashboard comparing any two IPL 2026 batters across batting phases. Trained a DNN model to compute <em>Runs Above Expected</em>, quantifying each batter's situational performance vs an average IPL baseline, with multi-phase splits, shot profiles, and contextual strike-rate benchmarks.</p>
           <div class="tech-tags">
@@ -319,6 +327,7 @@
 
         <!-- 2 - Customer Segmentation -->
         <article class="project-card" data-original-order="2" data-order-data="4" data-order-analytics="2">
+          <span class="project-status-dot static" title="Repository" aria-label="Repository"></span>
           <h3>Retail Marketing - Customer Segmentation &amp; A/B Analysis</h3>
           <p>Applied K-Means clustering on customer transaction data to uncover user behaviour patterns and optimise audience segmentation. Evaluated cohort performance through A/B analysis to guide personalised marketing strategy and ROI improvement.</p>
           <div class="tech-tags">
@@ -329,6 +338,7 @@
 
         <!-- 3 - NFL ETL -->
         <article class="project-card" data-original-order="3" data-order-data="1" data-order-analytics="3">
+          <span class="project-status-dot live" title="Live Dashboard" aria-label="Live Dashboard"></span>
           <h3>NFL × Weather - ETL Performance Analytics Pipeline</h3>
           <p>Designed and deployed a distributed ETL pipeline on GCP using Airflow and Spark to process 1M+ rows of NFL play-by-play and weather data. Implemented a dimensional schema in Snowflake with Tableau dashboards for fourth-down decision analytics.</p>
           <div class="tech-tags">
@@ -344,6 +354,7 @@
 
         <!-- 4 - Starbucks LLM -->
         <article class="project-card" data-original-order="4" data-order-data="5" data-order-analytics="6">
+          <span class="project-status-dot static" title="Repository" aria-label="Repository"></span>
           <h3>Starbucks - LLM-Powered Product Search &amp; Retrieval</h3>
           <p>Built an end-to-end semantic search system for Starbucks menu items. Used LLM-powered constraint extraction ("vegan", "under 200 calories") combined with semantic ranking to return relevant products. Evaluated using NDCG@K to optimise retrieval ranking.</p>
           <div class="tech-tags">
@@ -354,6 +365,7 @@
 
         <!-- 5 - Retail Demand Forecasting -->
         <article class="project-card" data-original-order="5" data-order-data="2" data-order-analytics="4">
+          <span class="project-status-dot static" title="Repository" aria-label="Repository"></span>
           <h3>Retail Demand Forecasting Pipeline</h3>
           <p>Developed a machine learning pipeline using LightGBM and Random Forest to forecast SKU-level retail demand. Engineered leakage-safe temporal features, achieving ~18% reduction in demand-weighted forecasting error and improving simulated inventory planning across large SKU catalogs.</p>
           <div class="tech-tags">
@@ -364,6 +376,7 @@
 
         <!-- 6 - EV Dashboard -->
         <article class="project-card" data-original-order="6" data-order-data="6" data-order-analytics="7">
+          <span class="project-status-dot static" title="Repository" aria-label="Repository"></span>
           <h3>EV Demand Momentum Dashboard</h3>
           <p>Analysed global electric vehicle adoption momentum (2019–2024) to identify high-growth markets. Built an executive-ready Tableau dashboard to support infrastructure investment decisions and market prioritisation strategy for a cross-functional stakeholder audience.</p>
           <div class="tech-tags">
@@ -374,6 +387,7 @@
 
         <!-- 7 - Libby App Design Sprint -->
         <article class="project-card" data-original-order="7" data-order-data="7" data-order-analytics="1">
+          <span class="project-status-dot static" title="Repository" aria-label="Repository"></span>
           <h3>Product Strategy &amp; Discovery Sprint - Libby App</h3>
           <p>Led an end-to-end 5-day design sprint at UCLA Anderson to improve engagement for high-intent Libby readers. Mapped the critical user journey, identified hold-queue drop-off as the primary retention bottleneck, and defined a target persona based on retention risk. Designed and tested a metadata-driven recommendation prototype; defined success metrics (retention rate, engagement lift, ROI per reader) to inform go/no-go decision.</p>
           <div class="tech-tags">
@@ -550,6 +564,6 @@
   </div>
 </footer>
 
-<script src="main.js?v=2"></script>
+<script src="main.js?v=3"></script>
 </body>
 </html>
