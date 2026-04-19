@@ -52,19 +52,8 @@ window.addEventListener('load', () => {
     if (loader) loader.classList.add('hidden');
   }, 1600);
 
-  /* ── Visitor counter (hits.seeyoufarm.com — ad-blocker resistant) ── */
-  const countEl = document.getElementById('visit-count');
-  if (countEl) {
-    const img = document.createElement('img');
-    img.src = 'https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fpkatole24.github.io&count_bg=%237C6FFF&title_bg=%23555&icon=&icon_color=%23E7E7E7&title=visits&edge_flat=true';
-    img.alt = 'Visitor counter';
-    img.style.cssText = 'height:20px;vertical-align:middle;border-radius:4px;';
-    img.onerror = () => { countEl.closest('.visitor-counter').style.display = 'none'; };
-    // Replace the span contents with the badge image
-    countEl.closest('.visitor-counter').innerHTML = '';
-    countEl.closest('.visitor-counter').appendChild(img);
-  }
 });
+
 
 /* ── DOM ready ───────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
