@@ -384,6 +384,7 @@ body.light {
   --muted:    #666;
 }
 body.light .header { background: rgba(245,245,247,.88); }
+body.light .role-bar { background: rgba(245,245,247,.88); }
 body.light #loader  { background: var(--bg); }
 body.light #scroll-bar { opacity: .85; }
 
