@@ -80,7 +80,7 @@
           <div class="avatar-badge">Open to Work</div>
         </div>
         <div class="hero-stats">
-          <div class="stat"><strong>7+</strong><span>Projects</span></div>
+          <div class="stat"><strong>10+</strong><span>Projects</span></div>
           <div class="stat"><strong>4</strong><span>Orgs</span></div>
           <div class="stat"><strong>3.95</strong><span>GPA @ UCLA</span></div>
         </div>
@@ -288,23 +288,38 @@
         <div class="building-body">
           <p class="building-label">Currently Building</p>
           <p class="building-title">Identity Risk Copilot - Agentic Login Triage System</p>
-          <p class="building-desc">A local-first AI system that triages suspicious login events using a deterministic risk engine, a LangGraph agentic workflow, and a RAG retrieval layer backed by policy documents and case memory. Analyst-facing Streamlit UI surfaces risk tier, recommended action, and a grounded explanation - all runnable without external credentials.</p>
+          <ul class="building-desc-bullets">
+            <li>Hybrid risk engine combining deterministic rules + ML scoring to triage suspicious login &amp; account-takeover signals</li>
+            <li>LangGraph agentic workflow orchestrates retrieval, policy-constrained action selection, and structured analyst explanations</li>
+            <li>Local-first vector retrieval (FAISS) backed by a JSONL policy knowledge base and persistent case memory</li>
+            <li>Analyst-facing Streamlit UI surfaces risk tier, recommended action, and grounded evidence; all runnable without external credentials via Ollama</li>
+          </ul>
           <div class="building-tags">
             <span class="tag">LangGraph</span><span class="tag">RAG / FAISS</span><span class="tag">Streamlit</span><span class="tag">Python</span><span class="tag">Pydantic</span><span class="tag">GenAI APIs</span>
           </div>
+          <a class="btn-github" href="https://github.com/pkatole24/identity-risk-copilot" target="_blank" rel="noopener" style="margin-top:12px;display:inline-block">View on GitHub ↗</a>
         </div>
       </div>
 
       <div class="projects-grid" id="projects-grid">
 
-        <!-- 1 - Sports Analytics -->
+        <!-- 1 - IPL Dashboard -->
         <article class="project-card" data-original-order="1" data-order-data="3" data-order-analytics="5">
-          <h3>Sports Analytics - Predicting Match Outcomes &amp; Scores</h3>
-          <p>Built Random Forest and SVM regression models predicting match outcomes with ~90% accuracy. Designed evaluation metrics and visual dashboards to analyse model performance. Integrated APIs for real-time natural language generation demonstrating live reporting use cases.</p>
+          <h3>Sports Analytics - IPL 2026 Batter Comparison App</h3>
+          <ul class="project-bullets">
+            <li>Built a live Streamlit dashboard comparing any two IPL 2026 batters across phase-by-phase batting performance, with light/dark theme and CSV export.</li>
+            <li>Engineered <em>Runs Above Expected</em> as the core performance lens: trained a DNN model to predict expected runs for an average IPL batter from each batting situation; the dashboard surfaces actual vs expected across own 15-ball phases (1-15 through 76-90 balls).</li>
+            <li>Delivered multi-dimensional views including powerplay vs death-over splits, difficulty-adjusted strike rate, shot-type &amp; control % profiles, and line-length matchup grids.</li>
+            <li>Built worm charts showing cumulative runs gained or lost vs league phase rate, and contextual SR benchmarks vs match, teammates, and league-phase baselines.</li>
+          </ul>
           <div class="tech-tags">
-            <span class="tag">Python</span><span class="tag">Random Forest</span><span class="tag">SVM</span><span class="tag">NLG APIs</span>
+            <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">DNN (xR Model)</span><span class="tag">Sports Analytics</span><span class="tag">Data Visualisation</span>
           </div>
-          <a class="btn-github" href="https://github.com/pkatole24" target="_blank" rel="noopener">View on GitHub ↗</a>
+          <div class="project-links">
+            <a class="btn-github" href="https://github.com/pkatole24/ipl-dashboard-comparative" target="_blank" rel="noopener">View on GitHub ↗</a>
+            <a class="btn-tableau" href="https://ipl-dashboard-comparative-ku4yz8ukhhqkhdsbtb66re.streamlit.app/"
+               target="_blank" rel="noopener">🏏 Live App ↗</a>
+          </div>
         </article>
 
         <!-- 2 - Customer Segmentation -->
