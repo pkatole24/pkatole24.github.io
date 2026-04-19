@@ -52,12 +52,12 @@ window.addEventListener('load', () => {
     if (loader) loader.classList.add('hidden');
   }, 1600);
 
-  /* ── Visitor counter (CountAPI) ───────────────────── */
+  /* ── Visitor counter (counterapi.dev) ─────────────── */
   const countEl = document.getElementById('visit-count');
   if (countEl) {
-    fetch('https://api.countapi.xyz/hit/pkatole24.github.io/visits')
+    fetch('https://api.counterapi.dev/v1/pkatole24-github-io/visits/up')
       .then(r => r.json())
-      .then(data => { countEl.textContent = data.value.toLocaleString(); })
+      .then(data => { countEl.textContent = (data.count ?? data.value ?? '--').toLocaleString(); })
       .catch(() => { countEl.textContent = '--'; });
   }
 });
