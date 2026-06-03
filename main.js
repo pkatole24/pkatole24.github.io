@@ -251,8 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Open the most recent (last) experience by default if it exists
-  if (tlNodes.length > 0) openTimeline(tlNodes.length - 1);
+
 
 
   /* ── Smooth scroll ────────────────────────────── */
