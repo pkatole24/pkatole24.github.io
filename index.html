@@ -330,8 +330,19 @@
 
       <div class="projects-grid" id="projects-grid">
 
-        <!-- 1 - IPL Dashboard -->
-        <article class="project-card" data-original-order="1" data-order-data="3" data-order-analytics="5">
+        <!-- 1 - Multi-Agent Dispatch Reporting System -->
+        <article class="project-card" data-original-order="1" data-order-data="1" data-order-analytics="3">
+          <span class="project-status-dot static" title="Repository" aria-label="Repository"></span>
+          <h3>Multi-Agent Dispatch Reporting System</h3>
+          <p>Built a multi-agent LangGraph system for automated logistics dispatch reporting. Agents pipeline through RAG-based policy retrieval, deterministic shipment data reconciliation (alias correction, legacy ID resolution), corridor KPI and trend analysis, and weather-risk buffering. A Planner Agent produces structured dispatch recommendations that an independent Audit Agent reviews in a retry loop before a Report Agent generates an executive HTML summary. Developed for the UCLA MSBA AI Agents Challenge 2026.</p>
+          <div class="tech-tags">
+            <span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">LangChain</span><span class="tag">RAG / FAISS</span><span class="tag">Multi-Agent</span><span class="tag">Agentic Workflow</span><span class="tag">Automated Reporting</span>
+          </div>
+          <a class="btn-github" href="https://github.com/pkatole24/seewees-dispatch-ai-agent" target="_blank" rel="noopener">View on GitHub &#8599;</a>
+        </article>
+
+        <!-- 2 - IPL Dashboard -->
+        <article class="project-card" data-original-order="2" data-order-data="4" data-order-analytics="6">
           <span class="project-status-dot live" title="Live App" aria-label="Live App"></span>
           <h3>Sports Analytics - IPL 2026 Batter Comparison App</h3>
           <p>Built a live Streamlit dashboard comparing any two IPL 2026 batters across batting phases. Trained a DNN model to compute <em>Runs Above Expected</em>, quantifying each batter's situational performance vs an average IPL baseline, with multi-phase splits, shot profiles, and contextual strike-rate benchmarks.</p>
@@ -346,7 +357,7 @@
         </article>
 
         <!-- 2 - Customer Segmentation -->
-        <article class="project-card" data-original-order="2" data-order-data="4" data-order-analytics="2">
+        <article class="project-card" data-original-order="3" data-order-data="5" data-order-analytics="2">
           <span class="project-status-dot static" title="Repository" aria-label="Repository"></span>
           <h3>Retail Marketing - Customer Segmentation &amp; A/B Analysis</h3>
           <p>Applied K-Means clustering on customer transaction data to uncover user behaviour patterns and optimise audience segmentation. Evaluated cohort performance through A/B analysis to guide personalised marketing strategy and ROI improvement.</p>
@@ -357,7 +368,7 @@
         </article>
 
         <!-- 3 - NFL ETL -->
-        <article class="project-card" data-original-order="3" data-order-data="1" data-order-analytics="3">
+        <article class="project-card" data-original-order="4" data-order-data="2" data-order-analytics="4">
           <span class="project-status-dot live" title="Live Dashboard" aria-label="Live Dashboard"></span>
           <h3>NFL × Weather - ETL Performance Analytics Pipeline</h3>
           <p>Designed and deployed a distributed ETL pipeline on GCP using Airflow and Spark to process 1M+ rows of NFL play-by-play and weather data. Implemented a dimensional schema in Snowflake with Tableau dashboards for fourth-down decision analytics.</p>
@@ -373,7 +384,7 @@
         </article>
 
         <!-- 4 - Starbucks LLM -->
-        <article class="project-card" data-original-order="4" data-order-data="5" data-order-analytics="6">
+        <article class="project-card" data-original-order="5" data-order-data="6" data-order-analytics="7">
           <span class="project-status-dot static" title="Repository" aria-label="Repository"></span>
           <h3>Starbucks - LLM-Powered Product Search &amp; Retrieval</h3>
           <p>Built an end-to-end semantic search system for Starbucks menu items. Used LLM-powered constraint extraction ("vegan", "under 200 calories") combined with semantic ranking to return relevant products. Evaluated using NDCG@K to optimise retrieval ranking.</p>
@@ -384,7 +395,7 @@
         </article>
 
         <!-- 5 - Retail Demand Forecasting -->
-        <article class="project-card" data-original-order="5" data-order-data="2" data-order-analytics="4">
+        <article class="project-card" data-original-order="6" data-order-data="3" data-order-analytics="5">
           <span class="project-status-dot static" title="Repository" aria-label="Repository"></span>
           <h3>Retail Demand Forecasting Pipeline</h3>
           <p>Developed a machine learning pipeline using LightGBM and Random Forest to forecast SKU-level retail demand. Engineered leakage-safe temporal features, achieving ~18% reduction in demand-weighted forecasting error and improving simulated inventory planning across large SKU catalogs.</p>
@@ -395,7 +406,7 @@
         </article>
 
         <!-- 6 - EV Dashboard -->
-        <article class="project-card" data-original-order="6" data-order-data="6" data-order-analytics="7">
+        <article class="project-card" data-original-order="7" data-order-data="7" data-order-analytics="8">
           <span class="project-status-dot static" title="Repository" aria-label="Repository"></span>
           <h3>EV Demand Momentum Dashboard</h3>
           <p>Analysed global electric vehicle adoption momentum (2019–2024) to identify high-growth markets. Built an executive-ready Tableau dashboard to support infrastructure investment decisions and market prioritisation strategy for a cross-functional stakeholder audience.</p>
@@ -406,7 +417,7 @@
         </article>
 
         <!-- 7 - Libby App Design Sprint -->
-        <article class="project-card" data-original-order="7" data-order-data="7" data-order-analytics="1">
+        <article class="project-card" data-original-order="8" data-order-data="8" data-order-analytics="1">
           <span class="project-status-dot static" title="Repository" aria-label="Repository"></span>
           <h3>Product Strategy &amp; Discovery Sprint - Libby App</h3>
           <p>Led an end-to-end 5-day design sprint at UCLA Anderson to improve engagement for high-intent Libby readers. Mapped the critical user journey, identified hold-queue drop-off as the primary retention bottleneck, and defined a target persona based on retention risk. Designed and tested a metadata-driven recommendation prototype; defined success metrics (retention rate, engagement lift, ROI per reader) to inform go/no-go decision.</p>
@@ -471,6 +482,8 @@
             <span class="skill-pill" data-roles="all data">ETL / ELT Pipelines</span>
             <span class="skill-pill" data-roles="all data">Apache Airflow</span>
             <span class="skill-pill" data-roles="all data">LangGraph</span>
+            <span class="skill-pill" data-roles="all data">LangChain</span>
+            <span class="skill-pill" data-roles="all data">Multi-Agent Systems</span>
             <span class="skill-pill" data-roles="all data">RAG / Vector Search</span>
             <span class="skill-pill" data-roles="all data analytics">GenAI / LLM APIs</span>
           </div>
